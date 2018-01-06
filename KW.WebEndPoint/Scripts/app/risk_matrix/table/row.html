@@ -1,0 +1,10 @@
+<td><%= Project && Project.NamaProject %></td>
+<td></td>
+<td class="text-center">
+    <% if(StageTahunRiskMatrix.length > 0) { %> 
+		<span><a class="btn btn-link" href="<% print(`${window.location.hash}/${Id}`); %>">Detail</a></span>
+    	<span><button type="button" class="btn btn-link" name="Update" btn-update>Update</button></span>
+	<% } else { %>
+		<span><button type="button" class="btn btn-link" name="Edit" btn-edit>Edit</button></span>
+	<% } %>
+</td>

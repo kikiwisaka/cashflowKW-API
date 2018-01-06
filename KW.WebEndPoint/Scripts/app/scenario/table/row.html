@@ -1,0 +1,16 @@
+<td><%= NamaScenario %></td>
+<td>
+    <% if(IsDefault) { %>
+      <span class="label label-success">Yes</span>
+    <% } %>
+</td>
+<td class="text-center">
+    <span><button type="button" class="btn btn-link" name="Default">Default</button></span>
+    <!-- <a class="btn btn-link" href="<% print(`${window.location.hash}/${Id}`); %>">Detail</a> -->
+    <span>
+    	<button type="button" class="btn btn-link" name="Edit">
+    		Ubah
+    	</button>
+    </span>
+    <span><button type="button" class="btn btn-link" name="Delete">Hapus</button></span>
+</td>

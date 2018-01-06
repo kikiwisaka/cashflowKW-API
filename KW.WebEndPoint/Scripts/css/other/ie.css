@@ -1,0 +1,23 @@
+a {
+    display: block;
+    position: relative;
+}
+
+a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background: url('x');
+}
+
+strong {
+    display: inline-block;
+}
+
+.multiselect-container li a:after {
+    position: relative;
+}

@@ -1,0 +1,518 @@
+﻿
+@{
+    Layout = null;
+    var data = Model;
+    var personalInformation = Model["PersonalInformation"];
+    var emergency = Model["EmergencyContact"];
+    var position = Model["JobContract"];
+    var wotc = Model["WOTC"];
+    var dependents = Model["Dependent"];
+    var benefit = Model["Benefit"];
+    var maskingFields = Model["MaskingFields"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="~/Content/css/app/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        .header-title {
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .tbl-based {
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .tbl-ben-ellection-header {
+            border: 1px solid #C0C0C0;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+            .tbl-ben-ellection-header th {
+                border: 1px solid #C0C0C0;
+                padding: 5px;
+                background: #F0F0F0;
+            }
+
+            .tbl-ben-ellection-header td {
+                border: 1px solid #C0C0C0;
+                padding: 5px;
+            }
+
+        .tbl-ben-ellection {
+            border: 1px solid #C0C0C0;
+            border-collapse: collapse;
+            padding: 5px;
+            width: 430px;
+        }
+
+            .tbl-ben-ellection th {
+                border: 1px solid #C0C0C0;
+                padding: 5px;
+                background: #F0F0F0;
+            }
+
+            .tbl-ben-ellection td {
+                border: 1px solid #C0C0C0;
+                padding: 5px;
+            }
+
+        .info-title {
+            text-align: right;
+        }
+
+        .ctp-col {
+            width: 170px;
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px; /* Height of the footer */
+            background: #6cf;
+            text-align: center;
+        }
+
+        #container {
+            min-height: 100%;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="row">
+            <div class="header-title">Employee Profile Report</div>
+            <hr />
+            <div class="header-title">@Model["CompanyName"]</div>
+            <div class="header-title">@Model["CompanyAddress"]</div>
+            <div class="tbl-based">
+                @if (Model["PersonalInformation"] != null)
+                {
+                    <div id="personalInformation" style="page-break-inside: avoid;">
+                        <table class="tbl-ben-ellection-header">
+                            <tr>
+                                <th style="width:200px; background-color:#D0D0D0">Personal Information</th>
+                                <th style="width:550px; background-color:#D0D0D0">Personal Information</th>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Salutation :</td>
+                                <td>@Model["PersonalInformation"].SalutationName</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">First Name :</td>
+                                <td>@Model["PersonalInformation"].FirstName</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Middle Name :</td>
+                                <td>@Model["PersonalInformation"].MiddleName</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Last Name :</td>
+                                <td>@Model["PersonalInformation"].LastName</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Gender :</td>
+                                <td>@Model["PersonalInformation"].Gender</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Date of Birth :</td>
+                                <td>@Model["PersonalInformation"].DOBFormat</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Social Security Number: </td>
+                                @if (Model["IsMasking"] && maskingFields.SSN == true)
+                                {
+                                    <td>****</td>
+                                }
+                                else
+                                {
+                                    <td>@Model["PersonalInformation"].SSN</td>
+                                }
+                            </tr>
+                            <tr>
+                                <td class="info-title">Payroll Id: </td>
+                                @if (Model["IsMasking"] && maskingFields.Payroll == true)
+                                {
+                                    <td>****</td>
+                                }
+                                else
+                                {
+                                    <td>@Model["PersonalInformation"].PayrollId</td>
+                                }
+                            </tr>
+                            <tr>
+                                <td class="info-title">Hire Date: </td>
+                                <td>@Model["PersonalInformation"].HireDateFormat</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Address: </td>
+                                <td>@Model["PersonalInformation"].Street &nbsp;@Model["PersonalInformation"].Street2</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">City: </td>
+                                <td>@Model["PersonalInformation"].City</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">State: </td>
+                                <td>@Model["PersonalInformation"].State</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Zip Code: </td>
+                                <td>@Model["PersonalInformation"].ZipCode</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Country: </td>
+                                <td>@Model["PersonalInformation"].CountryId</td>
+                            </tr>
+
+                            <tr>
+                                <td class="info-title" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Cell Number: </td>
+                                <td>@Model["PersonalInformation"].CellNumber</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Phone Number: </td>
+                                <td>@Model["PersonalInformation"].PhoneNumber</td>
+                            </tr>
+                            <tr>
+                                <td class="info-title">Primary Language: </td>
+                                <td>@Model["PersonalInformation"].PrimaryLanguage</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br />
+                }
+
+
+                @if (Model["EmergencyContact"] != null)
+                {
+                    <div obo-emergency-contact style="page-break-inside: avoid;">
+                        <h3>Emergency Contact</h3>
+                        @if (Model["EmergencyContact"].Count > 0)
+                        {
+                            <table class="tbl-ben-ellection-header">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Relationship</th>
+                                        <th>Addreess</th>
+                                        <th>Language</th>
+                                        <th>Phone</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Country</th>
+                                        <th>ZipCode</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model["EmergencyContact"].Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@Model["EmergencyContact"][i].ContactName</td>
+                                            <td>@Model["EmergencyContact"][i].RelationshipName</td>
+                                            <td>@Model["EmergencyContact"][i].Address</td>
+                                            <td>@Model["EmergencyContact"][i].Language</td>
+                                            <td>@Model["EmergencyContact"][i].PhoneNumber</td>
+                                            <td>@Model["EmergencyContact"][i].City</td>
+                                            <td>@Model["EmergencyContact"][i].State</td>
+                                            <td>@Model["EmergencyContact"][i].CountryId</td>
+                                            <td>@Model["EmergencyContact"][i].ZipCode</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <small>Not data to display</small>
+                        }
+                    </div>
+                    <br />
+                }
+
+                @if (Model["JobContract"] != null)
+                {
+                    <div obo-job-contract style="page-break-inside: avoid;">
+                        <h3>Job Contract</h3>
+                        @if (Model["JobContract"].Count > 0)
+                        {
+                            <table class="tbl-ben-ellection-header">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Type</th>
+                                        <th>Position</th>
+                                        <th>Pay Rate</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model["JobContract"].Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@Model["JobContract"][i].Status</td>
+                                            <td>@Model["JobContract"][i].ContractTypeName</td>
+                                            <td>@Model["JobContract"][i].EmployeeTypesName</td>
+                                            @if (Model["IsMasking"] && maskingFields.Rate == true)
+                                            {
+                                                <td>**** &nbsp;@Model["JobContract"][i].PayTypeName</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@Model["JobContract"][i].PayRate &nbsp;@Model["JobContract"][i].PayTypeName</td>
+                                            }
+                                            <td>@Model["JobContract"][i].StartDateFormat</td>
+                                            <td>@Model["JobContract"][i].EndDateFormat</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <small>Not data to display</small>
+                        }
+                    </div>
+                    <br />
+                }
+
+                @if (Model["WOTC"] != null)
+                {
+                    <div obo-wotct style="page-break-inside: avoid;">
+                        <h3>WOTC</h3>
+                        @if (Model["WOTC"].Count > 0)
+                        {
+                            <table class="tbl-ben-ellection-header">
+                                <thead>
+                                    <tr>
+                                        <th>Target Code</th>
+                                        <th>Target Name</th>
+                                        <th>Status</th>
+                                        <th>Insert Date</th>
+                                        <th>Update Date</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model["WOTC"].Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@Model["WOTC"][i].WotcTargetCode</td>
+                                            <td>@Model["WOTC"][i].WotcTargetName</td>
+                                            <td>@Model["WOTC"][i].StatusName</td>
+                                            <td>@Model["WOTC"][i].InsertDateFormat</td>
+                                            <td>@Model["WOTC"][i].UpdateDateFormat</td>
+                                            <td>@Model["WOTC"][i].ApprovalNote</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <small>Not data to display</small>
+                        }
+
+                    </div>
+                    <br />
+                }
+
+                @if (Model["Dependent"] != null)
+                {
+                    <div obo-dependent style="page-break-inside: avoid;">
+                        <h3>Dependent</h3>
+                        @if (Model["Dependent"].Count > 0)
+                        {
+                            <table class="tbl-ben-ellection-header">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Relationship</th>
+                                        <th>Gender</th>
+                                        <th>Date of Birth</th>
+                                        <th>SSN</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model["Dependent"].Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@Model["Dependent"][i].FullName</td>
+                                            <td>@Model["Dependent"][i].RelationTypeName</td>
+                                            <td>@Model["Dependent"][i].Gender.GenderName</td>
+                                            <td>@Model["Dependent"][i].DOBFormat</td>
+                                            <td>@Model["Dependent"][i].SSN</td>
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <small>Not data to display</small>
+                        }
+                    </div>
+                    <br />
+                }
+
+                @if (Model["Benefit"] != null)
+                {
+                    <div obo-benefit style="page-break-inside: avoid;">
+                        <h3>Benefits</h3>
+                        @if (Model["Benefit"].Count > 0)
+                        {
+                            <table class="tbl-ben-ellection-header">
+                                <thead>
+                                    <tr>
+                                        <th>Plan Year</th>
+                                        <th>Plan Name</th>
+                                        <th>Offer Date</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Type</th>
+                                        <th>Rate</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model["Benefit"].Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@Model["Benefit"][i].BenefitPlan.BenefitPlanYearName</td>
+                                            <td>@Model["Benefit"][i].PlanName</td>
+                                            <td>@Model["Benefit"][i].OfferDateFormat</td>
+                                            <td>@Model["Benefit"][i].StartDateFormat</td>
+                                            <td>@Model["Benefit"][i].EndDateFormat</td>
+                                            <td>@Model["Benefit"][i].BenefitPlan.BenefitTypeName</td>
+                                            <td>@Model["Benefit"][i].RateTypeName</td>
+                                            <td>@Model["Benefit"][i].StatusName</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <small>Not data to display</small>
+                        }
+                    </div>
+                    <br />
+                }
+
+                @if (Model["Compliance"] != null)
+                {
+                    <div obo-compliance style="page-break-inside: avoid;">
+                        <h3>Compliance</h3>
+                        @if (Model["Compliance"].Count > 0)
+                        {
+                            for (int i = 0; i < Model["Compliance"].Count; i++)
+                            {
+                                <h4>:: @Model["Compliance"][i].ComplianceTracking.Name</h4>
+                                if (Model["Compliance"][i].Compliance.Count > 0)
+                                {
+                                    <table class="tbl-ben-ellection-header">
+                                        <thead>
+                                            <tr>
+                                                <th>Tracking Name</th>
+                                                <th>Active</th>
+                                                <th>Upload Date</th>
+                                                <th>Update Date</th>
+                                                <th>Expired Date</th>
+                                                <th>Information</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int x = 0; x < Model["Compliance"][i].Compliance.Count; x++)
+                                            {
+                                                <tr>
+                                                    <td>@Model["Compliance"][i].Compliance[x].TrackingName</td>
+                                                    <td>@Model["Compliance"][i].Compliance[x].IsActiveName</td>
+                                                    <td>@Model["Compliance"][i].Compliance[x].CreateDateFormat</td>
+                                                    <td>@Model["Compliance"][i].Compliance[x].UpdateDateFormat</td>
+                                                    <td>@Model["Compliance"][i].Compliance[x].ExpiredDateFormat</td>
+                                                    <td>@Model["Compliance"][i].Compliance[x].Information</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                }
+                                else
+                                {
+                                    <small>Not data to display</small>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <small>Not data to display</small>
+                        }
+                    </div>
+                    <br />
+                }
+
+                @if (Model["Payroll"] != null)
+                {
+                    <div obo-payroll style="page-break-inside: avoid;">
+                        <h3>Payroll</h3>
+                        @if (Model["Payroll"].Count > 0)
+                        {
+                            <table class="tbl-ben-ellection-header">
+                                <thead>
+                                    <tr>
+                                        <th>Year</th>
+                                        <th>Month</th>
+                                        <th>Total Hour</th>
+                                        <th>Total Wages</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model["Payroll"].Count; i++)
+                                    {
+                                        <tr>
+                                            <td>@Model["Payroll"][i].Year</td>
+                                            <td>@Model["Payroll"][i].Month</td>
+                                            <td>@Model["Payroll"][i].TotalHour.ToString("#.##")</td>
+                                            @if (Model["IsMasking"] && maskingFields.Wages == true)
+                                            {
+                                                <td>****</td>
+                                            }
+                                            else
+                                            {
+                                                <td>@Model["Payroll"][i].TotalWages.ToString("#.##")</td>
+                                            }
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        else
+                        {
+                            <small>Not data to display</small>
+                        }
+                    </div>
+                    <br />
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,45 @@
+<form class="modal-dialog modal-md form-horizontal" role="document" ehs-form>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">List Project</h5>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="col-md-4 control-label">Project</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= Project && Project.NamaProject %>" class="form-control" name="" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Periode Start Project</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= moment(Project && Project.TahunAwalProject).format('MM/DD/YYYY') %>" class="form-control" name="StartProject" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Periode End Project</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= moment(Project && Project.TahunAkhirProject).format('MM/DD/YYYY') %>" class="form-control" name="EndProject" disabled>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Stage</label>
+          </div>
+          <div tab-content>
+          </div>
+
+          <div class="col-md-12" obo-table-risk>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="pull-left ml15">All fields marked with an asterisk (*) are required.</p>
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" data-dismiss="modal">CANCEL</button>
+      <!-- <button type="submit" class="btn btn-primary btn-s pull-xs-right">SAVE</button> -->
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" btn-save>SAVE</button>
+    </div>
+  </div>
+</form>

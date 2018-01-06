@@ -1,0 +1,39 @@
+<ul class="breadcrumb">
+    <li>Master Data</li>
+    <li>Kategori Resiko</li>
+    <li class="active">Info</li>
+</ul>
+<div class="panel panel-default">
+  <div class="panel-heading clean">
+    <p class="panel-title">
+      Info Kategori Risiko
+      <a class="btn btn-primary pull-right btn-back-detail" href="<% print(commonFunction.getCurrentHashOmitSuffix(1)) %>">Kembali</a>
+    </p>
+  </div>
+  <div class="panel-body row">
+	<div class="card" obo-table-subrisk>
+		<div class="col-md-6" style="margin-bottom: 15px;">
+			<div class="row">
+				<div class="col-md-5">Master Risiko ID</div>
+				<div class="col-md-7" name="KodeMRisk"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">Nama Kategori Risiko</div>
+				<div class="col-md-7" name="NamaCategoryRisk"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">Definisi</div>
+				<div class="col-md-7" name="Definisi"></div>
+			</div>
+		</div>
+		<div class="col-md-12" style="margin-bottom: 15px;">
+		    <p class="panel-title">
+		      Risiko Kejadian
+		      <button class="btn btn-primary pull-right" name="add">Tambah</button>
+		    </p>
+		</div>
+	</div>
+	<div obo-paging class="pull-right">
+	</div>
+  </div>
+</div>

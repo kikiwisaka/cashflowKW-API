@@ -1,0 +1,40 @@
+<ul class="breadcrumb">
+    <li>Master</li>
+    <li>Over All Comment</li>
+    <li class="active">Detail</li>
+</ul>
+<div class="panel panel-default">
+  <div class="panel-heading clean">
+    <p class="panel-title">
+      Over All Comment Detail
+      <a class="btn btn-primary pull-right fa fa-arrow-left" href="<% print(commonFunction.getCurrentHashOmitSuffix(1)) %>"></a>
+    </p>
+  </div>
+  <div class="panel-body row">
+
+	
+
+		<div class="col-md-6" style="margin-bottom: 15px;">
+			<div class="row">
+				<div class="col-md-5">Warna</div>
+				<div class="col-md-1" style="background-color:<%= Warna %>;  height:15px;"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">Over All Comment</div>
+				<div class="col-md-7" name="OverAllComment"></div>
+			</div>
+		</div>
+
+		<div class="col-md-12" style="margin-bottom: 15px;">
+		    <p class="panel-title">
+		      Action Point Comment
+		      <button class="btn btn-primary pull-right" name="add">Add Over All Comment</button>
+		    </p>
+		</div>
+
+	
+  </div>
+</div>
+
+<div class="card" obo-table-comment></div>
+<div class="pull-right" obo-paging></div>

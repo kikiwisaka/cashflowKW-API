@@ -1,0 +1,82 @@
+<form class="modal-dialog modal-lg form-horizontal" role="document" ehs-form>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Ubah Asset Data</h5>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-5 control-label">Asset Class *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= AssetClass %>" class="form-control" name="AssetClass">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Term Awal *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= TermAwal %>" class="form-control" name="TermAwal" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Term Akhir *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= TermAwal %>" class="form-control" name="TermAkhir">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Diasumsikan kembali *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= TermAkhir %>" class="form-control" name="AssumentReturn" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Diluar tahun awal *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= OutstandingStartYears %>"  class="form-control" name="OutstandingStartYears">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="col-md-5 control-label">Diluar Akhir tahun *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= OutstandingEndYears %>" class="form-control" name="OutstandingEndYears" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Nilai Asset *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= AssetValue %>"  class="form-control" name="AssetValue">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Proposi *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= Porpotion %>" class="form-control" name="Porpotion" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Asumsi Persentase *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= AssumedReturnPercentage %>"  class="form-control" name="AssumedReturnPercentage">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-5 control-label">Diasumsikan kembali *</label>
+              <div class="col-md-7">
+                <input type="text" value="<%= AssumedReturn %>" class="form-control" name="AssumedReturn" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="pull-left ml15">Semua bidang yang ditandai dengan tanda bintang (*) wajib di isi.</p>
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" data-dismiss="modal">Kembali</button>
+      <button type="submit" class="btn btn-primary btn-s pull-xs-right">Simpan</button>
+    </div>
+  </div>
+</form>

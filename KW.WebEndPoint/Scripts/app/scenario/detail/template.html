@@ -1,0 +1,35 @@
+<ul class="breadcrumb">
+    <li>Master</li>
+    <li>Likelihood Parameter</li>
+    <li class="active">Info</li>
+</ul>
+<div class="panel panel-default">
+  <div class="panel-heading clean">
+    <p class="panel-title">
+     Info Likelihood Parameter
+      <a class="btn btn-primary pull-right fa fa-arrow-left" href="<% print(commonFunction.getCurrentHashOmitSuffix(1)) %>"></a>
+    </p>
+  </div>
+  <div class="panel-body row">
+	<div class="card" obo-table-sublikelihood>
+		<div class="col-md-6" style="margin-bottom: 15px;">
+			<div class="row">
+				<div class="col-md-5">Nama Likelihood Parameter</div>
+				<div class="col-md-7" name="NamaLikehood"><%= NamaLikehood %></div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">Incres</div>
+				<div class="col-md-7" name="Incres"><%= Incres %></div>
+			</div>
+		</div>
+		<div class="col-md-12" style="margin-bottom: 15px;">
+		    <p class="panel-title">
+		      <!-- Sub Risk -->
+		     <!--  <button class="btn btn-primary pull-right" name="add">Add</button> -->
+		    </p>
+		</div>
+	</div>
+	<div obo-paging>
+	</div>
+  </div>
+</div>

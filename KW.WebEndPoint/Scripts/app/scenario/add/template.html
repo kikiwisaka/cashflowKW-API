@@ -1,0 +1,54 @@
+<form class="modal-dialog modal-md form-horizontal" role="document" ehs-form>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Tambah Skenario</h5>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="col-md-4 control-label">Nama Skenario *</label>
+            <div class="col-md-8">
+              <input type="text" value="" class="form-control" name="NamaScenario">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">proyek*</label>
+            <div class="col-md-6">
+              <textarea class="form-control" rows="3" id="Project" name="ChosenProject" disabled></textarea>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-secondary btn" type="button" name="SelectProject">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i> Pilih
+              </button>
+              <button class="btn btn-secondary btn hidden" type="button" name="EditSelectProject">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i> Ubah
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Likelihood Parameter *</label>
+            <div class="col-md-6">
+              <input type="text" value="" class="form-control" name="NamaLikehood" disabled>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-secondary btn pull-right" type="button" name="SelectLikelihood">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i> Pilih
+                </button>
+              </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-8" likelihood-table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="pull-left ml15">Semua bidang yang ditandai dengan tanda bintang (*) wajib di isi.</p>
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" data-dismiss="modal">CANCEL</button>
+      <button type="submit" class="btn btn-primary btn-s pull-xs-right">SAVE</button>
+    </div>
+  </div>
+</form>

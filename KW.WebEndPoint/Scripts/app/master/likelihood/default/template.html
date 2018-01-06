@@ -1,0 +1,22 @@
+<form class="modal-dialog modal-md form-horizontal" role="document" ehs-form>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Set Default Likelihood  Parameter</h5>
+    </div>
+    <div class="modal-body">
+      Apakah Anda yakin Merubah Likelihood Parameter <b><%= NamaLikehood %></b>?
+      <div class="col-md-8 hidden">
+        <input type="text" value="<%= NamaLikehood %>" class="form-control" name="NamaLikehood">
+        <input type="text" value="<%= DefinisiLikehood %>" class="form-control" name="DefinisiLikehood">
+        <input type="text" value="<%= Lower %>" class="form-control" name="Lower">
+        <input type="text" value="<%= Upper %>" class="form-control" name="Upper">
+        <input type="text" value="<%= Incres %>" class="form-control" name="Incres">
+        <input type="text" value="<%= Average %>" class="form-control" name="Average">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" data-dismiss="modal">Kembali</button>
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" name="setdefault">Iya</button>
+    </div>
+  </div>
+</form>

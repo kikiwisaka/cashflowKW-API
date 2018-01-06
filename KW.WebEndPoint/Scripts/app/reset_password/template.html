@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3" obo-container>
+        <img class="logistical" src="/Scripts/img/logo_white.svg">
+        <img class="freightassist pull-right" src="/Scripts/img/freight_assist.png">
+        <div class="card filter">
+            <div class="card-block" obo-content>
+                <div class="container">
+                    <div class="card-title">
+                        <h3><strong>Reset Password</strong></h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form accept-charset="UTF-8" role="form">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="New Password" name="NewPassword" type="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Retype New Password" name="ConfirmPassword" type="password">
+                                    </div>
+                                </fieldset>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6">
+                                        <button class="btn btn-lg btn-info btn-block" type="button" obo-reset>Cancel</button>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6">
+                                        <button class="btn btn-lg btn-info btn-block" type="button" obo-confirm>Confirm</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Password Validation</h3>
+                            <ul class="list-unstyled" obo-listpasswordvalidation>
+                                <li><img class="success_check" obo-minimum8chars> Minimum of 8 characters</li>
+                                <li><img class="success_check" obo-atleast1lochar> At least one lowercase characters</li>
+                                <li><img class="fail_exclamation" obo-atleast1upchar> At least one uppercase character</li>
+                                <li><img class="success_check" obo-atleast1numchar> At least one numberic character</li>
+                                <li><img class="success_check" obo-atleast1nonalphanumchar> At least one non-alphanumeric character</li>
+                                <li><img class="fail_exclamation" obo-passmustmatch> Match with confirm password</li>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="center text-white h7">&copy; Copyright 2017 <a href="http://www.onebyonedigital.com">OneByOne Digital</a>
+            <br> Logistical Software 1.1.03
+        </p>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<form class="modal-dialog modal-md form-horizontal" role="document" ehs-form>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Edit Comment</h5>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12"> 
+        <div class="form-group">
+            <label class="col-md-4 control-label">Warna *</label>
+            <div class="col-md-2">
+              <input type="text" value="" class="form-control" name="MasterWarna" disabled>
+            </div>
+          </div>         
+          <div class="form-group">
+            <label class="col-md-4 control-label">Metrices *</label>
+            <div class="col-md-8">
+              <select class="form-control select" name="NamaMatrix" disabled></select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Comment *</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= Comment %>" class="form-control" name="Comment" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Action Point *</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= ActionPoint %>" class="form-control" name="ActionPoint">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="pull-left ml15">All fields marked with an asterisk (*) are required.</p>
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" data-dismiss="modal">CANCEL</button>
+      <button type="submit" class="btn btn-primary btn-s pull-xs-right">SAVE</button>
+    </div>
+  </div>
+</form>

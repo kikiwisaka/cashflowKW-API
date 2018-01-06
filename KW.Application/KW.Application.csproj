@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9EF45B6-45E5-4AE2-9871-A858DE9F627F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KW.Application</RootNamespace>
+    <AssemblyName>KW.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.88.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ClosedXML.0.88.0\lib\net452\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastMember.Signed, Version=1.0.0.9, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.Signed.1.1.0\lib\net40\FastMember.Signed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOs\Correlation\CorrelatedProjectDetailDTO.cs" />
+    <Compile Include="DTOs\Correlation\CorrelatedProjectDTO.cs" />
+    <Compile Include="DTOs\Correlation\CorrelatedSektorDetailDTO.cs" />
+    <Compile Include="DTOs\Correlation\CorrelationRiskAntarSektorDTO.cs" />
+    <Compile Include="DTOs\Correlation\CorrelationRiskAntarProjectDTO.cs" />
+    <Compile Include="DTOs\Correlation\CorrelatedSektorDTO.cs" />
+    <Compile Include="DTOs\Dashboard\DashboardRiskCapitalProjectDTO.cs" />
+    <Compile Include="DTOs\General\YearDTO.cs" />
+    <Compile Include="DTOs\General\HelperDTO.cs" />
+    <Compile Include="DTOs\General\PaginationDTO.cs" />
+    <Compile Include="DTOs\Master\AssetDataDTO.cs" />
+    <Compile Include="DTOs\Master\ColorCommentDTO.cs" />
+    <Compile Include="DTOs\Master\MatrixDTO.cs" />
+    <Compile Include="DTOs\Master\FunctionalRiskDTO.cs" />
+    <Compile Include="DTOs\Master\CommentsDTO.cs" />
+    <Compile Include="DTOs\Master\CorrelationMatrixDTO.cs" />
+    <Compile Include="DTOs\Master\LikehoodDetailDTO.cs" />
+    <Compile Include="DTOs\Master\PMNDTO.cs" />
+    <Compile Include="DTOs\Master\ProjectRiskRegistrasiDTO.cs" />
+    <Compile Include="DTOs\Master\ProjectRiskStatusDTO.cs" />
+    <Compile Include="DTOs\Master\SubRiskRegistrasiDTO .cs" />
+    <Compile Include="DTOs\Master\RiskRegistrasiDTO.cs" />
+    <Compile Include="DTOs\Master\LikehoodDTO.cs" />
+    <Compile Include="DTOs\Master\ProjectDTO.cs" />
+    <Compile Include="DTOs\Master\SektorDTO.cs" />
+    <Compile Include="DTOs\Master\StageDTO.cs" />
+    <Compile Include="DTOs\Master\TahapanDTO.cs" />
+    <Compile Include="DTOs\OverAllComments\OverAllCommentsDTO.cs" />
+    <Compile Include="DTOs\RiskMatrix\MaksimumProjectValueDTO.cs" />
+    <Compile Include="DTOs\RiskMatrix\RiskMatrixProjectDTO.cs" />
+    <Compile Include="DTOs\RiskMatrix\StageTahunRiskMatrixDetailDTO.cs" />
+    <Compile Include="DTOs\RiskMatrix\StageTahunRiskMatrixDTO.cs" />
+    <Compile Include="DTOs\RiskMatrix\RiskMatrixStageDTO.cs" />
+    <Compile Include="DTOs\RiskMatrix\RiskMatrixDTO.cs" />
+    <Compile Include="DTOs\Scenario\ScenarioDetailDTO.cs" />
+    <Compile Include="DTOs\Scenario\ScenarioDTO.cs" />
+    <Compile Include="DTOs\User\MenuDTO.cs" />
+    <Compile Include="DTOs\User\RoleAccess.cs" />
+    <Compile Include="DTOs\User\RoleDTO.cs" />
+    <Compile Include="DTOs\User\UserDTO.cs" />
+    <Compile Include="DTOs\User\UserMaskingDTO.cs" />
+    <Compile Include="DTOs\User\UserRoleDTO.cs" />
+    <Compile Include="Params\Correlation\CorrelatedProjectDetailCollectionParam.cs" />
+    <Compile Include="Params\Correlation\CorrelatedProjectDetailListParam.cs" />
+    <Compile Include="Params\Correlation\CorrelatedProjectListParam.cs" />
+    <Compile Include="Params\Correlation\CorrelatedProjectParam.cs" />
+    <Compile Include="Params\Correlation\CorrelatedSektorDetailCollectionParam.cs" />
+    <Compile Include="Params\Correlation\CorrelatedSektorListParam.cs" />
+    <Compile Include="Params\Correlation\CorrelatedSektorParam.cs" />
+    <Compile Include="Params\Correlation\CorrelationRiskAntarProjectListParam.cs" />
+    <Compile Include="Params\Correlation\CorrelationRiskAntarProjectParam.cs" />
+    <Compile Include="Params\Correlation\CorrelationRiskAntarSektorListParam.cs" />
+    <Compile Include="Params\Correlation\CorrelationRiskAntarSektorParam.cs" />
+    <Compile Include="Params\Correlation\CorrelatedSektorDetailListParam.cs" />
+    <Compile Include="Params\OverAllComments\OverAllCommentsListParam.cs" />
+    <Compile Include="Params\OverAllComments\OverAllCommentsParam.cs" />
+    <Compile Include="Params\Filters\GeneralCollectionParameter.cs" />
+    <Compile Include="Params\Filters\GeneralFilterParameter.cs" />
+    <Compile Include="Params\Filters\PaginationDetailParam.cs" />
+    <Compile Include="Params\Filters\PaginationParam.cs" />
+    <Compile Include="Params\Filters\EmployeeListParameter.cs" />
+    <Compile Include="Params\Master\AssetData\AssetDataListParam.cs" />
+    <Compile Include="Params\Master\AssetData\AssetDataParam.cs" />
+    <Compile Include="Params\Master\ColorComment\ColorCommentListParam.cs" />
+    <Compile Include="Params\Master\ColorComment\ColorCommentParam.cs" />
+    <Compile Include="Params\Master\Comments\CommentsListParam.cs" />
+    <Compile Include="Params\Master\Comments\CommentsParam.cs" />
+    <Compile Include="Params\Master\FunctionalRisk\FunctionalRiskListParam.cs" />
+    <Compile Include="Params\Master\FunctionalRisk\FunctionalRiskParam.cs" />
+    <Compile Include="Params\Master\CorrelationMatrix\CorrelationMatrixListParam.cs" />
+    <Compile Include="Params\Master\CorrelationMatrix\CorrelationMatrixParam.cs" />
+    <Compile Include="Params\Master\Likehood\LikehoodDetailListParam.cs" />
+    <Compile Include="Params\Master\Likehood\LikehoodDetailParam.cs" />
+    <Compile Include="Params\Master\Matrix\MatrixListParam.cs" />
+    <Compile Include="Params\Master\Matrix\MatrixParam.cs" />
+    <Compile Include="Params\Master\PMN\PMNListParam.cs" />
+    <Compile Include="Params\Master\PMN\PMNParam.cs" />
+    <Compile Include="Params\Master\Project\ProjectRiskRegistrasiParam.cs" />
+    <Compile Include="Params\Master\SubRiskRegistrasi\SubRiskRegistrasiListParam.cs" />
+    <Compile Include="Params\Master\SubRiskRegistrasi\SubRiskRegistrasiParam.cs" />
+    <Compile Include="Params\Master\RiskRegistrasi\RiskRegistrasiListParam.cs" />
+    <Compile Include="Params\Master\RiskRegistrasi\RiskRegistrasiParam.cs" />
+    <Compile Include="Params\Master\Likehood\LikehoodListParam.cs" />
+    <Compile Include="Params\Master\Likehood\LikehoodParam.cs" />
+    <Compile Include="Params\Master\Project\ProjectListParam.cs" />
+    <Compile Include="Params\Master\Project\ProjectParam.cs" />
+    <Compile Include="Params\Master\Sektor\SektorListParam.cs" />
+    <Compile Include="Params\Master\Sektor\SektorParam.cs" />
+    <Compile Include="Params\Master\Stage\StageListParam.cs" />
+    <Compile Include="Params\Master\Stage\StageParam.cs" />
+    <Compile Include="Params\Master\Tahapan\TahapanListParam.cs" />
+    <Compile Include="Params\Master\Tahapan\TahapanParam.cs" />
+    <Compile Include="Params\Reports\UndiversifiedRiskCapital\UndiversifiedRiskCapitalParam.cs" />
+    <Compile Include="Params\RiskMartix\MaksimumProjectValueListParam.cs" />
+    <Compile Include="Params\RiskMartix\MaksimumProjectValueParam.cs" />
+    <Compile Include="Params\RiskMartix\RiskMatrixCollectionParameter.cs" />
+    <Compile Include="Params\RiskMartix\RiskMatrixProjectListParam.cs" />
+    <Compile Include="Params\RiskMartix\RiskMatrixProjectParam.cs" />
+    <Compile Include="Params\RiskMartix\StageTahunRiskMatrixDetailListParam.cs" />
+    <Compile Include="Params\RiskMartix\StageTahunRiskMatrixDetailParam.cs" />
+    <Compile Include="Params\RiskMartix\StageTahunRiskMatrixListParam.cs" />
+    <Compile Include="Params\RiskMartix\StageTahunRiskMatrixParam.cs" />
+    <Compile Include="Params\RiskMartix\RiskMatrixStageListParam.cs" />
+    <Compile Include="Params\RiskMartix\RiskMartixListParam.cs" />
+    <Compile Include="Params\RiskMartix\RiskMatrixStageParam.cs" />
+    <Compile Include="Params\RiskMartix\RiskMartixParam.cs" />
+    <Compile Include="Params\Scenario\ScenarioListParam.cs" />
+    <Compile Include="Params\Scenario\ScenarioParam.cs" />
+    <Compile Include="Params\Scenario\ScenarioDetailListParam.cs" />
+    <Compile Include="Params\Scenario\ScenarioDetailParam.cs" />
+    <Compile Include="Params\User\MenuAccessLiteParameters.cs" />
+    <Compile Include="Services\CorrelatedProjectApplication.cs" />
+    <Compile Include="Services\CorrelatedProjectDetailApplication.cs" />
+    <Compile Include="Services\CorrelatedSektorDetailApplication.cs" />
+    <Compile Include="Services\CorrelationRiskAntarProjectApplication.cs" />
+    <Compile Include="Services\DashboardRiskCapitalProjectApplication.cs" />
+    <Compile Include="Services\FunctionalRiskApplication.cs" />
+    <Compile Include="Services\Interfaces\ICorrelatedProjectDetailService.cs" />
+    <Compile Include="Services\Interfaces\ICorrelatedProjectService.cs" />
+    <Compile Include="Services\Interfaces\ICorrelatedSektorDetailService.cs" />
+    <Compile Include="Services\Interfaces\IDashboardRiskCapitalProjectService.cs" />
+    <Compile Include="Services\Interfaces\IFunctionalRiskService.cs" />
+    <Compile Include="Services\Interfaces\IOverAllCommentsService.cs" />
+    <Compile Include="Services\OverAllCommentsApplication.cs" />
+    <Compile Include="Services\Interfaces\IStageTahunRiskMatrixDetailService.cs" />
+    <Compile Include="Services\MatrixApplication.cs" />
+    <Compile Include="Services\AssetDataApplication.cs" />
+    <Compile Include="Services\ColorCommentApplication.cs" />
+    <Compile Include="Services\CommentsApplication.cs" />
+    <Compile Include="Services\CorrelatedSektorApplication.cs" />
+    <Compile Include="Services\CorrelationMatrixApplication.cs" />
+    <Compile Include="Services\CorrelationRiskAntarSektorApplication.cs" />
+    <Compile Include="Services\CorrelationRiskAntarSektorDetailApplication.cs" />
+    <Compile Include="Services\Interfaces\IAssetDataService.cs" />
+    <Compile Include="Services\Interfaces\IColorCommentService.cs" />
+    <Compile Include="Services\Interfaces\ICommentsService.cs" />
+    <Compile Include="Services\Interfaces\ICorrelatedSektorService.cs" />
+    <Compile Include="Services\Interfaces\ICorrelationMatrixService.cs" />
+    <Compile Include="Services\Interfaces\ICorrelationRiskAntarProjectService.cs" />
+    <Compile Include="Services\Interfaces\ICorrelationRiskAntarSektorService.cs" />
+    <Compile Include="Services\Interfaces\ILikehoodDetailService.cs" />
+    <Compile Include="Services\Interfaces\IMaksimumProjectValueService.cs" />
+    <Compile Include="Services\Interfaces\IPMNService.cs" />
+    <Compile Include="Services\Interfaces\IProjectRiskRegistrasiService.cs" />
+    <Compile Include="Services\Interfaces\IRiskMatrixProjectService.cs" />
+    <Compile Include="Services\Interfaces\IRiskMatrixStageService.cs" />
+    <Compile Include="Services\Interfaces\IStageTahunRiskMatrixService.cs" />
+    <Compile Include="Services\Interfaces\IScenarioDetailService.cs" />
+    <Compile Include="Services\Interfaces\IScenarioService.cs" />
+    <Compile Include="Services\Interfaces\IRiskMatrixService.cs" />
+    <Compile Include="Services\Interfaces\ISubRiskRegistrasiService.cs" />
+    <Compile Include="Services\LikehoodDetailApplication.cs" />
+    <Compile Include="Services\PMNApplication.cs" />
+    <Compile Include="Services\ProjectRiskRegistrasiApplication.cs" />
+    <Compile Include="Services\RiskMatrixProjectApplication.cs" />
+    <Compile Include="Services\RiskMatrixStageApplication.cs" />
+    <Compile Include="Services\MaksimumProjectValueApplication.cs" />
+    <Compile Include="Services\StageTahunRiskMatrixApplication.cs" />
+    <Compile Include="Services\ScenarioApplication.cs" />
+    <Compile Include="Services\ScenarioDetailApplication.cs" />
+    <Compile Include="Services\RiskMatrixApplication.cs" />
+    <Compile Include="Services\StageTahunRiskMatrixDetailApplication.cs" />
+    <Compile Include="Services\SubRiskRegistrasiApplication.cs" />
+    <Compile Include="Services\RiskRegistrasiApplication.cs" />
+    <Compile Include="Services\Interfaces\IMatrixService.cs" />
+    <Compile Include="Services\Interfaces\IRiskRegistrasiService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Interfaces\ILikehoodService.cs" />
+    <Compile Include="Services\Interfaces\IProjectService.cs" />
+    <Compile Include="Services\Interfaces\ISektorService.cs" />
+    <Compile Include="Services\Interfaces\IStageService.cs" />
+    <Compile Include="Services\Interfaces\ITahapanService.cs" />
+    <Compile Include="Services\Interfaces\IMenuService.cs" />
+    <Compile Include="Services\Interfaces\IEmailService.cs" />
+    <Compile Include="Services\Interfaces\IUserResetPasswordService.cs" />
+    <Compile Include="Services\Interfaces\IUserService.cs" />
+    <Compile Include="Services\LikehoodApplication.cs" />
+    <Compile Include="Services\ProjectApplication.cs" />
+    <Compile Include="Services\SektorApplication.cs" />
+    <Compile Include="Services\StageApplication.cs" />
+    <Compile Include="Services\TahapanApplication.cs" />
+    <Compile Include="Services\MenuApplication.cs" />
+    <Compile Include="Services\EmailService.cs" />
+    <Compile Include="Services\UserApplication.cs" />
+    <Compile Include="Services\UserResetPasswordApplication.cs" />
+    <Compile Include="Templates\Email\RegisterNewUser.cs" />
+    <Compile Include="Templates\Email\ResetPassword.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="Dashboard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AHCBlowfish.dll" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\KW.Application.dll" />
+    <Content Include="bin\Debug\KW.Application.pdb" />
+    <Content Include="bin\Debug\KW.Common.dll" />
+    <Content Include="bin\Debug\KW.Common.pdb" />
+    <Content Include="bin\Debug\KW.Core.dll" />
+    <Content Include="bin\Debug\KW.Core.pdb" />
+    <Content Include="bin\Debug\KW.Domain.dll" />
+    <Content Include="bin\Debug\KW.Domain.pdb" />
+    <Content Include="bin\Debug\KW.Infrastructure.dll" />
+    <Content Include="bin\Debug\KW.Infrastructure.pdb" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml" />
+    <Content Include="bin\x64\Release\AHCBlowfish.dll" />
+    <Content Include="bin\x64\Release\AWSSDK.Core.dll" />
+    <Content Include="bin\x64\Release\AWSSDK.Core.pdb" />
+    <Content Include="bin\x64\Release\AWSSDK.Core.xml" />
+    <Content Include="bin\x64\Release\AWSSDK.S3.dll" />
+    <Content Include="bin\x64\Release\AWSSDK.S3.pdb" />
+    <Content Include="bin\x64\Release\AWSSDK.S3.xml" />
+    <Content Include="bin\x64\Release\ClosedXML.dll" />
+    <Content Include="bin\x64\Release\ClosedXML.pdb" />
+    <Content Include="bin\x64\Release\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\x64\Release\Excel.dll" />
+    <Content Include="bin\x64\Release\Excel.pdb" />
+    <Content Include="bin\x64\Release\FluentNHibernate.dll" />
+    <Content Include="bin\x64\Release\FluentNHibernate.pdb" />
+    <Content Include="bin\x64\Release\FluentNHibernate.xml" />
+    <Content Include="bin\x64\Release\KW.Application.dll" />
+    <Content Include="bin\x64\Release\KW.Application.pdb" />
+    <Content Include="bin\x64\Release\KW.Domain.dll" />
+    <Content Include="bin\x64\Release\KW.Domain.pdb" />
+    <Content Include="bin\x64\Release\KW.Infrastructure.dll" />
+    <Content Include="bin\x64\Release\KW.Infrastructure.pdb" />
+    <Content Include="bin\x64\Release\KW.Persistance.AwsS3.dll" />
+    <Content Include="bin\x64\Release\KW.Persistance.AwsS3.pdb" />
+    <Content Include="bin\x64\Release\KW.Persistance.Core.dll" />
+    <Content Include="bin\x64\Release\KW.Persistance.Core.pdb" />
+    <Content Include="bin\x64\Release\KW.Persistance.File.dll" />
+    <Content Include="bin\x64\Release\KW.Persistance.File.pdb" />
+    <Content Include="bin\x64\Release\KW.Persistance.MSSQL.dll" />
+    <Content Include="bin\x64\Release\KW.Persistance.MSSQL.pdb" />
+    <Content Include="bin\x64\Release\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\x64\Release\Iesi.Collections.dll" />
+    <Content Include="bin\x64\Release\Iesi.Collections.xml" />
+    <Content Include="bin\x64\Release\Newtonsoft.Json.dll" />
+    <Content Include="bin\x64\Release\Newtonsoft.Json.xml" />
+    <Content Include="bin\x64\Release\NHibernate.dll" />
+    <Content Include="bin\x64\Release\NHibernate.xml" />
+    <Content Include="bin\x64\Release\StructureMap.dll" />
+    <Content Include="bin\x64\Release\StructureMap.pdb" />
+    <Content Include="bin\x64\Release\StructureMap.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="bin\x64\Release\KW.Application.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KW.Common\KW.Common.csproj">
+      <Project>{52a6c337-1055-47d5-a450-feb7eee4747a}</Project>
+      <Name>KW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KW.Core\KW.Core.csproj">
+      <Project>{cd05a097-22a3-427f-a420-8c04816b2f34}</Project>
+      <Name>KW.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KW.Domain\KW.Domain.csproj">
+      <Project>{8465a439-21f3-4195-9baa-5ad83d3ed7cf}</Project>
+      <Name>KW.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KW.Infrastructure\KW.Infrastructure.csproj">
+      <Project>{acb7c2b1-aaa3-4ffe-9cc5-b7c969f31254}</Project>
+      <Name>KW.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

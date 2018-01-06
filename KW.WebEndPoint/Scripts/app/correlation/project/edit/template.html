@@ -1,0 +1,79 @@
+<div class="panel panel-default">
+  <div class="panel-heading clean">
+    <p class="panel-title">
+      Correlation Project
+      <a class="btn btn-primary pull-right btn-back-detail" href="<% print(commonFunction.getCurrentHashOmitSuffix(1)) %>">Kembali</a>
+    </p>
+  </div>
+  <div class="panel-body row">
+	<div class="card" obo-table-subrisk>
+		<div class="col-md-6" style="margin-bottom: 15px;">
+			<table class="table-risk-matrix">
+				<tr class="td-risk-matrix">
+					<% _.each(CorrelationMatrix, function(item) { %> 
+						<td class="td-risk-matrix">
+							<%= item.NamaCorrelationMatrix %>
+						</td>
+					<% }) %>
+				</tr>
+				<tr class="td-risk-matrix">
+					<% _.each(CorrelationMatrix, function(item) { %> 
+						<td class="td-risk-matrix text-center">
+							<%= item.Nilai %>
+						</td>
+					<% }) %>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-6" style="margin-bottom: 15px;">
+		</div>
+
+		<div class="col-md-12 scrollable-matrix">
+			<div class="table-mat">
+			    <div class="heading-mat">
+			    	<div class="cell-mat">
+			            <p>Project Name</p>
+			        </div>
+			        <div class="cell-mat">
+			            <p>Project Type</p>
+			        </div>
+			    	<% _.each(Project, function(item) { %>
+			    		<div class="cell-mat" data-heading-risk="<%= item.Id %>">
+				            <p><%= item.NamaProject %></p>
+				        </div>
+		    		<% }) %>
+			    </div>
+			    <% _.each(Project, function(item) { %>
+				    <div class="row-mat" data-risk-row="<%= item.NamaProject %>">
+				        <div class="cell-mat text-center">
+				            <p><%= item.NamaProject %></p>
+				        </div>
+				        <div class="cell-mat">
+				            <p><%= item.Sektor.NamaSektor %></p>
+				        </div>
+				        <% _.each(Project, function(model) { %>
+					        <div class="cell-mat" data-cell-risk="<%= item.Id %>-<%= model.Id %>" data="<%= item.Id %>-<%= model.Id %>">
+					        	<% if(item.Id == model.Id) { status = true %>
+					        		<select cormat data-correlation-matrix="<%= item.Id %>-<%= model.Id %>" data-cormat="<%= item.Id %>-<%= model.Id %>" disabled>
+				        				<option value="1">1</option>
+					        		</select>
+					        	<% } else { %> 
+					        		<select cormat data-correlation-matrix="<%= item.Id %>-<%= model.Id %>" data-cormat="<%= item.Id %>-<%= model.Id %>">
+					        			<% _.each(CorrelationMatrix, function(corMat) { %> 
+					        				<option value="<%= corMat.Id %>"><%= corMat.NamaCorrelationMatrix %></option>
+					        			<% }) %>
+					        		</select>
+					        	<% } %>
+					        </div>
+		    			<% }) %>
+				    </div>
+	    		<% }) %>
+			</div>
+		</div>
+	</div>
+  </div>
+  <div class="modal-footer">
+      <!-- <button type="button" class="btn btn-primary btn-s pull-xs-right" data-dismiss="modal">CANCEL</button> -->
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" btn-save>SAVE</button>
+    </div>
+</div>

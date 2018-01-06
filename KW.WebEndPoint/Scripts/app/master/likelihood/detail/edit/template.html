@@ -1,0 +1,54 @@
+<form class="modal-dialog modal-md form-horizontal" role="document" ehs-form>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Edit Definisi Likelihood Parameter</h5>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="col-md-4 control-label">Nama Likelihood Parameter *</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= NamaLikehood %>" class="form-control" name="NamaLikehood" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Definisi Likelihood *</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= DefinisiLikehood %>" class="form-control" name="DefinisiLikehood" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Nilai Terendah (%) *</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= Lower %>" class="form-control" name="Lower">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Nilai Terbesar (%) *</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= Upper %>" class="form-control" name="Upper">
+            </div>
+          </div>
+          <!-- <div class="form-group">
+            <label class="col-md-4 control-label">Incres</label>
+            <div class="col-md-8">
+              <input type="text" value="" class="form-control" name="Incres" disabled>
+            </div>
+          </div> -->
+          <div class="form-group">
+            <label class="col-md-4 control-label">Rata-Rata (%)</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= Average %>" class="form-control" name="Average" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="pull-left ml15">Semua bidang yang ditandai dengan tanda bintang (*) wajib di isi.</p>
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" data-dismiss="modal">Kembali</button>
+      <button type="submit" class="btn btn-primary btn-s pull-xs-right">Simpan</button>
+    </div>
+  </div>
+</form>

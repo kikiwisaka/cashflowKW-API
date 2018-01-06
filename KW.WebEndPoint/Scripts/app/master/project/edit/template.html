@@ -1,0 +1,83 @@
+<form class="modal-dialog modal-md form-horizontal" role="document" ehs-form>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Ubah Proyek</h5>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="col-md-4 control-label">Nama Proyek *</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= NamaProject %>" class="form-control" name="NamaProject">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Keterangan *</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= Keterangan %>" class="form-control" name="Keterangan" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Awal Proyek *</label>
+            <div class="col-md-8 input-group">
+              <input type="text" value="<% if (TahunAwalProject) { print(moment(TahunAwalProject, ['YYYYMMDD']).format('ll'));}%>" class="form-control datepicker" name="TahunAwalProject" >
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Akhir Proyek *</label>
+            <div class="col-md-8 input-group">
+              <input type="text" value="<% if (TahunAkhirProject) { print(moment(TahunAkhirProject, ['YYYYMMDD']).format('ll'));}%>" class="form-control" name="TahunAkhirProject" />
+              <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Minimum (%)*</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= Minimum %>" class="form-control" name="Minimum" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Maksimum (%)*</label>
+            <div class="col-md-8">
+              <input type="text" value="<%= Maximum %>" class="form-control" name="Maximum" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Sektor *</label>
+            <div class="col-md-8">
+              <select class="form-control select" name="NamaSektor"></select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Tahapan *</label>
+            <div class="col-md-8">
+              <select class="form-control select" name="NamaTahapan"></select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Risk Registrasi *</label>
+            <div class="col-md-6">
+              <textarea class="form-control" rows="2" id="Risk" name="ChosenRisk" disabled></textarea>
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-secondary btn" type="button" name="SelectRisk">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                choose
+              </button>
+              <button class="btn btn-secondary btn hidden" type="button" name="EditSelectRisk">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i> Ubah
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="pull-left ml15">Semua bidang yang ditandai dengan tanda bintang (*) wajib Di isi.</p>
+      <button type="button" class="btn btn-primary btn-s pull-xs-right" data-dismiss="modal">Kembali</button>
+      <button type="submit" class="btn btn-primary btn-s pull-xs-right">Simpan</button>
+    </div>
+  </div>
+</form>

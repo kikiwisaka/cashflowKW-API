@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B1D0276-7413-452B-B0D5-C86A90A5E007}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KW.Presentation.WebEndPoint</RootNamespace>
+    <AssemblyName>KW.Presentation.WebEndPoint</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\app\bootstrap.min.css" />
+    <Content Include="Content\app\font-awesome.min.css" />
+    <Content Include="Content\app\jquery-ui.min.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\ionicons.svg" />
+    <Content Include="Content\img\app\logo-small.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="index.html" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\app\config.js" />
+    <Content Include="Scripts\app\correlation\risk_category\collection.js" />
+    <Content Include="Scripts\app\correlation\risk_category\edit\model.js" />
+    <Content Include="Scripts\app\correlation\risk_category\edit\template.html" />
+    <Content Include="Scripts\app\correlation\risk_category\edit\view.js" />
+    <Content Include="Scripts\app\correlation\risk_category\model.js" />
+    <Content Include="Scripts\app\correlation\risk_category\router.js" />
+    <Content Include="Scripts\app\correlation\risk_category\table\row.html" />
+    <Content Include="Scripts\app\correlation\risk_category\table\row.js" />
+    <Content Include="Scripts\app\correlation\risk_category\table\table.html" />
+    <Content Include="Scripts\app\correlation\risk_category\table\table.js" />
+    <Content Include="Scripts\app\correlation\risk_category\table\tbody.js" />
+    <Content Include="Scripts\app\correlation\risk_category\template.html" />
+    <Content Include="Scripts\app\correlation\risk_category\view.js" />
+    <Content Include="Scripts\app\correlation\project\collection.js" />
+    <Content Include="Scripts\app\correlation\project\edit\model.js" />
+    <Content Include="Scripts\app\correlation\project\edit\template.html" />
+    <Content Include="Scripts\app\correlation\project\edit\view.js" />
+    <Content Include="Scripts\app\correlation\project\model.js" />
+    <Content Include="Scripts\app\correlation\project\router.js" />
+    <Content Include="Scripts\app\correlation\project\table\row.html" />
+    <Content Include="Scripts\app\correlation\project\table\row.js" />
+    <Content Include="Scripts\app\correlation\project\table\table.html" />
+    <Content Include="Scripts\app\correlation\project\table\table.js" />
+    <Content Include="Scripts\app\correlation\project\table\tbody.js" />
+    <Content Include="Scripts\app\correlation\project\template.html" />
+    <Content Include="Scripts\app\correlation\project\view.js" />
+    <Content Include="Scripts\app\correlation\router.js" />
+    <Content Include="Scripts\app\dashboard\result\collection.js" />
+    <Content Include="Scripts\app\dashboard\result\model.js" />
+    <Content Include="Scripts\app\dashboard\result\router.js" />
+    <Content Include="Scripts\app\dashboard\result\template.html" />
+    <Content Include="Scripts\app\dashboard\result\view.js" />
+    <Content Include="Scripts\app\dashboard\router.js" />
+    <Content Include="Scripts\app\errorpages\notfound\template.html" />
+    <Content Include="Scripts\app\errorpages\notfound\view.js" />
+    <Content Include="Scripts\app\forgot_password\content.html" />
+    <Content Include="Scripts\app\forgot_password\templateemailaddressnotregistered.html" />
+    <Content Include="Scripts\app\forgot_password\templateresetpasswordrequest.html" />
+    <Content Include="Scripts\app\forgot_password\title.html" />
+    <Content Include="Scripts\app\forgot_password\view.js" />
+    <Content Include="Scripts\app\layout\content\view.js" />
+    <Content Include="Scripts\app\layout\navbar\template-old.html" />
+    <Content Include="Scripts\app\layout\navbar\template.html" />
+    <Content Include="Scripts\app\layout\navbar\view.js" />
+    <Content Include="Scripts\app\layout\sidebar\template.html" />
+    <Content Include="Scripts\app\layout\sidebar\view.js" />
+    <Content Include="Scripts\app\layout\usermodel.js" />
+    <Content Include="Scripts\app\login\content.html" />
+    <Content Include="Scripts\app\login\model.js" />
+    <Content Include="Scripts\app\login\template.html" />
+    <Content Include="Scripts\app\login\title.html" />
+    <Content Include="Scripts\app\login\view.js" />
+    <Content Include="Scripts\app\main.js" />
+    <Content Include="Scripts\app\mainmenu\template.html" />
+    <Content Include="Scripts\app\mainmenu\view.js" />
+    <Content Include="Scripts\app\master\asset_data\add\template.html" />
+    <Content Include="Scripts\app\master\asset_data\add\view.js" />
+    <Content Include="Scripts\app\master\asset_data\collection.js" />
+    <Content Include="Scripts\app\master\asset_data\delete\template.html" />
+    <Content Include="Scripts\app\master\asset_data\delete\view.js" />
+    <Content Include="Scripts\app\master\asset_data\edit\template.html" />
+    <Content Include="Scripts\app\master\asset_data\edit\view.js" />
+    <Content Include="Scripts\app\master\asset_data\model.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\add\template.html" />
+    <Content Include="Scripts\app\master\asset_data\pmn\add\view.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\collection.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\delete\template.html" />
+    <Content Include="Scripts\app\master\asset_data\pmn\delete\view.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\edit\template.html" />
+    <Content Include="Scripts\app\master\asset_data\pmn\edit\view.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\model.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\router.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\table\row.html" />
+    <Content Include="Scripts\app\master\asset_data\pmn\table\row.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\table\table.html" />
+    <Content Include="Scripts\app\master\asset_data\pmn\table\table.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\table\tbody.js" />
+    <Content Include="Scripts\app\master\asset_data\pmn\template.html" />
+    <Content Include="Scripts\app\master\asset_data\pmn\view.js" />
+    <Content Include="Scripts\app\master\asset_data\router.js" />
+    <Content Include="Scripts\app\master\asset_data\table\row.html" />
+    <Content Include="Scripts\app\master\asset_data\table\row.js" />
+    <Content Include="Scripts\app\master\asset_data\table\table.html" />
+    <Content Include="Scripts\app\master\asset_data\table\table.js" />
+    <Content Include="Scripts\app\master\asset_data\table\tbody.js" />
+    <Content Include="Scripts\app\master\asset_data\template.html" />
+    <Content Include="Scripts\app\master\asset_data\view.js" />
+    <Content Include="Scripts\app\master\comment\detail\table\collection.js" />
+    <Content Include="Scripts\app\master\comment\detail\table\model.js" />
+    <Content Include="Scripts\app\master\functional_risk\add\template.html" />
+    <Content Include="Scripts\app\master\functional_risk\add\view.js" />
+    <Content Include="Scripts\app\master\functional_risk\collection.js" />
+    <Content Include="Scripts\app\master\functional_risk\collectionMatrix.js" />
+    <Content Include="Scripts\app\master\functional_risk\delete\template.html" />
+    <Content Include="Scripts\app\master\functional_risk\delete\view.js" />
+    <Content Include="Scripts\app\master\functional_risk\edit\template.html" />
+    <Content Include="Scripts\app\master\functional_risk\edit\view.js" />
+    <Content Include="Scripts\app\master\functional_risk\model.js" />
+    <Content Include="Scripts\app\master\functional_risk\modelMatrix.js" />
+    <Content Include="Scripts\app\master\functional_risk\router.js" />
+    <Content Include="Scripts\app\master\functional_risk\table\row.html" />
+    <Content Include="Scripts\app\master\functional_risk\table\row.js" />
+    <Content Include="Scripts\app\master\functional_risk\table\table.html" />
+    <Content Include="Scripts\app\master\functional_risk\table\table.js" />
+    <Content Include="Scripts\app\master\functional_risk\table\tbody.js" />
+    <Content Include="Scripts\app\master\functional_risk\template.html" />
+    <Content Include="Scripts\app\master\functional_risk\view.js" />
+    <Content Include="Scripts\app\overall_comment\add\template.html" />
+    <Content Include="Scripts\app\overall_comment\add\view.js" />
+    <Content Include="Scripts\app\overall_comment\collection.js" />
+    <Content Include="Scripts\app\overall_comment\delete\template.html" />
+    <Content Include="Scripts\app\overall_comment\delete\view.js" />
+    <Content Include="Scripts\app\overall_comment\detail\add\template.html" />
+    <Content Include="Scripts\app\overall_comment\detail\add\view.js" />
+    <Content Include="Scripts\app\overall_comment\detail\collection.js" />
+    <Content Include="Scripts\app\overall_comment\detail\delete\template.html" />
+    <Content Include="Scripts\app\overall_comment\detail\delete\view.js" />
+    <Content Include="Scripts\app\overall_comment\detail\edit\template.html" />
+    <Content Include="Scripts\app\overall_comment\detail\edit\view.js" />
+    <Content Include="Scripts\app\overall_comment\detail\model.js" />
+    <Content Include="Scripts\app\overall_comment\detail\router.js" />
+    <Content Include="Scripts\app\overall_comment\detail\table\collection.js" />
+    <Content Include="Scripts\app\overall_comment\detail\table\model.js" />
+    <Content Include="Scripts\app\overall_comment\detail\table\row.html" />
+    <Content Include="Scripts\app\overall_comment\detail\table\row.js" />
+    <Content Include="Scripts\app\overall_comment\detail\table\table.html" />
+    <Content Include="Scripts\app\overall_comment\detail\table\table.js" />
+    <Content Include="Scripts\app\overall_comment\detail\table\tbody.js" />
+    <Content Include="Scripts\app\overall_comment\detail\template.html" />
+    <Content Include="Scripts\app\overall_comment\detail\view.js" />
+    <Content Include="Scripts\app\overall_comment\edit\template.html" />
+    <Content Include="Scripts\app\overall_comment\edit\view.js" />
+    <Content Include="Scripts\app\overall_comment\model.js" />
+    <Content Include="Scripts\app\overall_comment\router.js" />
+    <Content Include="Scripts\app\overall_comment\table\row.html" />
+    <Content Include="Scripts\app\overall_comment\table\row.js" />
+    <Content Include="Scripts\app\overall_comment\table\table.html" />
+    <Content Include="Scripts\app\overall_comment\table\table.js" />
+    <Content Include="Scripts\app\overall_comment\table\tbody.js" />
+    <Content Include="Scripts\app\overall_comment\template old.html" />
+    <Content Include="Scripts\app\overall_comment\template.html" />
+    <Content Include="Scripts\app\overall_comment\view.js" />
+    <Content Include="Scripts\app\master\comment\add\template.html" />
+    <Content Include="Scripts\app\master\comment\add\view.js" />
+    <Content Include="Scripts\app\master\comment\collection.js" />
+    <Content Include="Scripts\app\master\comment\delete\template.html" />
+    <Content Include="Scripts\app\master\comment\delete\view.js" />
+    <Content Include="Scripts\app\master\comment\detail\add\template.html" />
+    <Content Include="Scripts\app\master\comment\detail\add\view.js" />
+    <Content Include="Scripts\app\master\comment\detail\collection.js" />
+    <Content Include="Scripts\app\master\comment\detail\delete\template.html" />
+    <Content Include="Scripts\app\master\comment\detail\delete\view.js" />
+    <Content Include="Scripts\app\master\comment\detail\edit\template.html" />
+    <Content Include="Scripts\app\master\comment\detail\edit\view.js" />
+    <Content Include="Scripts\app\master\comment\detail\model.js" />
+    <Content Include="Scripts\app\master\comment\detail\router.js" />
+    <Content Include="Scripts\app\master\comment\detail\table\row.html" />
+    <Content Include="Scripts\app\master\comment\detail\table\row.js" />
+    <Content Include="Scripts\app\master\comment\detail\table\table.html" />
+    <Content Include="Scripts\app\master\comment\detail\table\table.js" />
+    <Content Include="Scripts\app\master\comment\detail\table\tbody.js" />
+    <Content Include="Scripts\app\master\comment\detail\template.html" />
+    <Content Include="Scripts\app\master\comment\detail\view.js" />
+    <Content Include="Scripts\app\master\comment\edit\template.html" />
+    <Content Include="Scripts\app\master\comment\edit\view.js" />
+    <Content Include="Scripts\app\master\comment\model.js" />
+    <Content Include="Scripts\app\master\comment\router.js" />
+    <Content Include="Scripts\app\master\comment\table\row.html" />
+    <Content Include="Scripts\app\master\comment\table\row.js" />
+    <Content Include="Scripts\app\master\comment\table\table.html" />
+    <Content Include="Scripts\app\master\comment\table\table.js" />
+    <Content Include="Scripts\app\master\comment\table\tbody.js" />
+    <Content Include="Scripts\app\master\comment\template old.html" />
+    <Content Include="Scripts\app\master\comment\template.html" />
+    <Content Include="Scripts\app\master\comment\view.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\add\template.html" />
+    <Content Include="Scripts\app\master\correlation_matrix\add\view.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\collection.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\default\template.html" />
+    <Content Include="Scripts\app\master\correlation_matrix\default\view.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\delete\template.html" />
+    <Content Include="Scripts\app\master\correlation_matrix\delete\view.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\edit\template.html" />
+    <Content Include="Scripts\app\master\correlation_matrix\edit\view.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\model.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\router.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\table\row.html" />
+    <Content Include="Scripts\app\master\correlation_matrix\table\row.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\table\table.html" />
+    <Content Include="Scripts\app\master\correlation_matrix\table\table.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\table\tbody.js" />
+    <Content Include="Scripts\app\master\correlation_matrix\template.html" />
+    <Content Include="Scripts\app\master\correlation_matrix\view.js" />
+    <Content Include="Scripts\app\master\likelihood\add\template.html" />
+    <Content Include="Scripts\app\master\likelihood\add\view.js" />
+    <Content Include="Scripts\app\master\likelihood\collection.js" />
+    <Content Include="Scripts\app\master\likelihood\default\template.html" />
+    <Content Include="Scripts\app\master\likelihood\default\view.js" />
+    <Content Include="Scripts\app\master\likelihood\delete\template.html" />
+    <Content Include="Scripts\app\master\likelihood\delete\view.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\edit\template.html" />
+    <Content Include="Scripts\app\master\likelihood\detail\edit\view.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\model.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\router.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\table\collection.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\table\model.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\table\row.html" />
+    <Content Include="Scripts\app\master\likelihood\detail\table\row.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\table\table.html" />
+    <Content Include="Scripts\app\master\likelihood\detail\table\table.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\table\tbody.js" />
+    <Content Include="Scripts\app\master\likelihood\detail\template.html" />
+    <Content Include="Scripts\app\master\likelihood\detail\view.js" />
+    <Content Include="Scripts\app\master\likelihood\edit\template.html" />
+    <Content Include="Scripts\app\master\likelihood\edit\view.js" />
+    <Content Include="Scripts\app\master\likelihood\model.js" />
+    <Content Include="Scripts\app\master\likelihood\router.js" />
+    <Content Include="Scripts\app\master\likelihood\table\row.html" />
+    <Content Include="Scripts\app\master\likelihood\table\row.js" />
+    <Content Include="Scripts\app\master\likelihood\table\table.html" />
+    <Content Include="Scripts\app\master\likelihood\table\table.js" />
+    <Content Include="Scripts\app\master\likelihood\table\tbody.js" />
+    <Content Include="Scripts\app\master\likelihood\template.html" />
+    <Content Include="Scripts\app\master\likelihood\view.js" />
+    <Content Include="Scripts\app\master\project\add\template.html" />
+    <Content Include="Scripts\app\master\project\add\view.js" />
+    <Content Include="Scripts\app\master\project\collection.js" />
+    <Content Include="Scripts\app\master\project\delete\template.html" />
+    <Content Include="Scripts\app\master\project\delete\view.js" />
+    <Content Include="Scripts\app\master\project\edit\template.html" />
+    <Content Include="Scripts\app\master\project\edit\view.js" />
+    <Content Include="Scripts\app\master\project\model.js" />
+    <Content Include="Scripts\app\master\project\router.js" />
+    <Content Include="Scripts\app\master\project\select_risk\collection.js" />
+    <Content Include="Scripts\app\master\project\select_risk\model.js" />
+    <Content Include="Scripts\app\master\project\select_risk\table\row.html" />
+    <Content Include="Scripts\app\master\project\select_risk\table\row.js" />
+    <Content Include="Scripts\app\master\project\select_risk\table\table.html" />
+    <Content Include="Scripts\app\master\project\select_risk\table\table.js" />
+    <Content Include="Scripts\app\master\project\select_risk\table\tbody.js" />
+    <Content Include="Scripts\app\master\project\select_risk\template.html" />
+    <Content Include="Scripts\app\master\project\select_risk\view.js" />
+    <Content Include="Scripts\app\master\project\table\row.html" />
+    <Content Include="Scripts\app\master\project\table\row.js" />
+    <Content Include="Scripts\app\master\project\table\table.html" />
+    <Content Include="Scripts\app\master\project\table\table.js" />
+    <Content Include="Scripts\app\master\project\table\tbody.js" />
+    <Content Include="Scripts\app\master\project\template.html" />
+    <Content Include="Scripts\app\master\project\view.js" />
+    <Content Include="Scripts\app\master\risk\add\template.html" />
+    <Content Include="Scripts\app\master\risk\add\view.js" />
+    <Content Include="Scripts\app\master\risk\collection.js" />
+    <Content Include="Scripts\app\master\risk\delete\template.html" />
+    <Content Include="Scripts\app\master\risk\delete\view.js" />
+    <Content Include="Scripts\app\master\risk\detail\add\template.html" />
+    <Content Include="Scripts\app\master\risk\detail\add\view.js" />
+    <Content Include="Scripts\app\master\risk\detail\collection.js" />
+    <Content Include="Scripts\app\master\risk\detail\delete\template.html" />
+    <Content Include="Scripts\app\master\risk\detail\delete\view.js" />
+    <Content Include="Scripts\app\master\risk\detail\edit\template.html" />
+    <Content Include="Scripts\app\master\risk\detail\edit\view.js" />
+    <Content Include="Scripts\app\master\risk\detail\model.js" />
+    <Content Include="Scripts\app\master\risk\detail\router.js" />
+    <Content Include="Scripts\app\master\risk\detail\table\collection.js" />
+    <Content Include="Scripts\app\master\risk\detail\table\model.js" />
+    <Content Include="Scripts\app\master\risk\detail\table\row.html" />
+    <Content Include="Scripts\app\master\risk\detail\table\row.js" />
+    <Content Include="Scripts\app\master\risk\detail\table\table.html" />
+    <Content Include="Scripts\app\master\risk\detail\table\table.js" />
+    <Content Include="Scripts\app\master\risk\detail\table\tbody.js" />
+    <Content Include="Scripts\app\master\risk\detail\template.html" />
+    <Content Include="Scripts\app\master\risk\detail\view.js" />
+    <Content Include="Scripts\app\master\risk\edit\template.html" />
+    <Content Include="Scripts\app\master\risk\edit\view.js" />
+    <Content Include="Scripts\app\master\risk\model.js" />
+    <Content Include="Scripts\app\master\risk\router.js" />
+    <Content Include="Scripts\app\master\risk\table\row.html" />
+    <Content Include="Scripts\app\master\risk\table\row.js" />
+    <Content Include="Scripts\app\master\risk\table\table.html" />
+    <Content Include="Scripts\app\master\risk\table\table.js" />
+    <Content Include="Scripts\app\master\risk\table\tbody.js" />
+    <Content Include="Scripts\app\master\risk\template old.html" />
+    <Content Include="Scripts\app\master\risk\template.html" />
+    <Content Include="Scripts\app\master\risk\view.js" />
+    <Content Include="Scripts\app\master\router.js" />
+    <Content Include="Scripts\app\master\sektor\add\template.html" />
+    <Content Include="Scripts\app\master\sektor\add\view.js" />
+    <Content Include="Scripts\app\master\sektor\collection.js" />
+    <Content Include="Scripts\app\master\sektor\delete\template.html" />
+    <Content Include="Scripts\app\master\sektor\delete\view.js" />
+    <Content Include="Scripts\app\master\sektor\edit\template.html" />
+    <Content Include="Scripts\app\master\sektor\edit\view.js" />
+    <Content Include="Scripts\app\master\sektor\model.js" />
+    <Content Include="Scripts\app\master\sektor\router.js" />
+    <Content Include="Scripts\app\master\sektor\table\row.html" />
+    <Content Include="Scripts\app\master\sektor\table\row.js" />
+    <Content Include="Scripts\app\master\sektor\table\table.html" />
+    <Content Include="Scripts\app\master\sektor\table\table.js" />
+    <Content Include="Scripts\app\master\sektor\table\tbody.js" />
+    <Content Include="Scripts\app\master\sektor\template.html" />
+    <Content Include="Scripts\app\master\sektor\view.js" />
+    <Content Include="Scripts\app\master\stage\add\template.html" />
+    <Content Include="Scripts\app\master\stage\add\view.js" />
+    <Content Include="Scripts\app\master\stage\collection.js" />
+    <Content Include="Scripts\app\master\stage\delete\template.html" />
+    <Content Include="Scripts\app\master\stage\delete\view.js" />
+    <Content Include="Scripts\app\master\stage\edit\template.html" />
+    <Content Include="Scripts\app\master\stage\edit\view.js" />
+    <Content Include="Scripts\app\master\stage\model.js" />
+    <Content Include="Scripts\app\master\stage\router.js" />
+    <Content Include="Scripts\app\master\stage\table\row.html" />
+    <Content Include="Scripts\app\master\stage\table\row.js" />
+    <Content Include="Scripts\app\master\stage\table\table.html" />
+    <Content Include="Scripts\app\master\stage\table\table.js" />
+    <Content Include="Scripts\app\master\stage\table\tbody.js" />
+    <Content Include="Scripts\app\master\stage\template.html" />
+    <Content Include="Scripts\app\master\stage\view.js" />
+    <Content Include="Scripts\app\master\tahapan_project\add\template.html" />
+    <Content Include="Scripts\app\master\tahapan_project\add\view.js" />
+    <Content Include="Scripts\app\master\tahapan_project\collection.js" />
+    <Content Include="Scripts\app\master\tahapan_project\delete\template.html" />
+    <Content Include="Scripts\app\master\tahapan_project\delete\view.js" />
+    <Content Include="Scripts\app\master\tahapan_project\edit\template.html" />
+    <Content Include="Scripts\app\master\tahapan_project\edit\view.js" />
+    <Content Include="Scripts\app\master\tahapan_project\model.js" />
+    <Content Include="Scripts\app\master\tahapan_project\router.js" />
+    <Content Include="Scripts\app\master\tahapan_project\table\row.html" />
+    <Content Include="Scripts\app\master\tahapan_project\table\row.js" />
+    <Content Include="Scripts\app\master\tahapan_project\table\table.html" />
+    <Content Include="Scripts\app\master\tahapan_project\table\table.js" />
+    <Content Include="Scripts\app\master\tahapan_project\table\tbody.js" />
+    <Content Include="Scripts\app\master\tahapan_project\template.html" />
+    <Content Include="Scripts\app\master\tahapan_project\view.js" />
+    <Content Include="Scripts\app\reset_password\model.js" />
+    <Content Include="Scripts\app\reset_password\template.html" />
+    <Content Include="Scripts\app\reset_password\view.js" />
+    <Content Include="Scripts\app\risk_matrix\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\model.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\table\row.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\table\row.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\table\table.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\table\table.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\table\tbody.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\template.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\detail\view.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\model.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\table\row.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\table\row.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\table\table.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\table\table.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\table\tbody.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\template.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\likelihood\view.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\model.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\modelStageTahunRiskMatrixDetail.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\router.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\stage_project\template.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\stage_project\view.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\table\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\table\model.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\table\row.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\table\row.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\table\table.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\table\table.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\table\tbody.js" />
+    <Content Include="Scripts\app\risk_matrix\detail\template.html" />
+    <Content Include="Scripts\app\risk_matrix\detail\view.js" />
+    <Content Include="Scripts\app\risk_matrix\edit\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\edit\model.js" />
+    <Content Include="Scripts\app\risk_matrix\edit\template.html" />
+    <Content Include="Scripts\app\risk_matrix\edit\view.js" />
+    <Content Include="Scripts\app\risk_matrix\model.js" />
+    <Content Include="Scripts\app\risk_matrix\router.js" />
+    <Content Include="Scripts\app\risk_matrix\select_project\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\select_project\model.js" />
+    <Content Include="Scripts\app\risk_matrix\select_project\table\row.html" />
+    <Content Include="Scripts\app\risk_matrix\select_project\table\row.js" />
+    <Content Include="Scripts\app\risk_matrix\select_project\table\table.html" />
+    <Content Include="Scripts\app\risk_matrix\select_project\table\table.js" />
+    <Content Include="Scripts\app\risk_matrix\select_project\table\tbody.js" />
+    <Content Include="Scripts\app\risk_matrix\select_project\template.html" />
+    <Content Include="Scripts\app\risk_matrix\select_project\view.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\model.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\table\row.html" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\table\row.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\table\table.html" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\table\table.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\table\tbody.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\template.html" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\detail\view.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\model.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\table\row.html" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\table\row.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\table\table.html" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\table\table.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\table\tbody.js" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\template.html" />
+    <Content Include="Scripts\app\risk_matrix\select_riskregistrasi\view.js" />
+    <Content Include="Scripts\app\risk_matrix\tabel_risk\collection.js" />
+    <Content Include="Scripts\app\risk_matrix\tabel_risk\model.js" />
+    <Content Include="Scripts\app\risk_matrix\tabel_risk\table\row.html" />
+    <Content Include="Scripts\app\risk_matrix\tabel_risk\table\row.js" />
+    <Content Include="Scripts\app\risk_matrix\tabel_risk\table\table.html" />
+    <Content Include="Scripts\app\risk_matrix\tabel_risk\table\table.js" />
+    <Content Include="Scripts\app\risk_matrix\tabel_risk\table\tbody.js" />
+    <Content Include="Scripts\app\risk_matrix\table\row.html" />
+    <Content Include="Scripts\app\risk_matrix\table\row.js" />
+    <Content Include="Scripts\app\risk_matrix\table\table.html" />
+    <Content Include="Scripts\app\risk_matrix\table\table.js" />
+    <Content Include="Scripts\app\risk_matrix\table\tbody.js" />
+    <Content Include="Scripts\app\risk_matrix\template.html" />
+    <Content Include="Scripts\app\risk_matrix\update\template.html" />
+    <Content Include="Scripts\app\risk_matrix\update\view.js" />
+    <Content Include="Scripts\app\risk_matrix\view.js" />
+    <Content Include="Scripts\app\router.js" />
+    <Content Include="Scripts\app\scenario\add\template.html" />
+    <Content Include="Scripts\app\scenario\add\view.js" />
+    <Content Include="Scripts\app\scenario\collection.js" />
+    <Content Include="Scripts\app\scenario\default\template.html" />
+    <Content Include="Scripts\app\scenario\default\view.js" />
+    <Content Include="Scripts\app\scenario\delete\template.html" />
+    <Content Include="Scripts\app\scenario\delete\view.js" />
+    <Content Include="Scripts\app\scenario\detail\edit\template.html" />
+    <Content Include="Scripts\app\scenario\detail\edit\view.js" />
+    <Content Include="Scripts\app\scenario\detail\model.js" />
+    <Content Include="Scripts\app\scenario\detail\router.js" />
+    <Content Include="Scripts\app\scenario\detail\table\collection.js" />
+    <Content Include="Scripts\app\scenario\detail\table\model.js" />
+    <Content Include="Scripts\app\scenario\detail\table\row.html" />
+    <Content Include="Scripts\app\scenario\detail\table\row.js" />
+    <Content Include="Scripts\app\scenario\detail\table\table.html" />
+    <Content Include="Scripts\app\scenario\detail\table\table.js" />
+    <Content Include="Scripts\app\scenario\detail\table\tbody.js" />
+    <Content Include="Scripts\app\scenario\detail\template.html" />
+    <Content Include="Scripts\app\scenario\detail\view.js" />
+    <Content Include="Scripts\app\scenario\edit\template.html" />
+    <Content Include="Scripts\app\scenario\edit\view.js" />
+    <Content Include="Scripts\app\scenario\model.js" />
+    <Content Include="Scripts\app\scenario\router.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\collection.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\collection.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\model.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\table\row.html" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\table\row.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\table\table.html" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\table\table.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\table\tbody.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\template.html" />
+    <Content Include="Scripts\app\scenario\select_likelihood\detail\view.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\model.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\table\row.html" />
+    <Content Include="Scripts\app\scenario\select_likelihood\table\row.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\table\table.html" />
+    <Content Include="Scripts\app\scenario\select_likelihood\table\table.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\table\tbody.js" />
+    <Content Include="Scripts\app\scenario\select_likelihood\template.html" />
+    <Content Include="Scripts\app\scenario\select_likelihood\view.js" />
+    <Content Include="Scripts\app\scenario\select_project\collection.js" />
+    <Content Include="Scripts\app\scenario\select_project\model.js" />
+    <Content Include="Scripts\app\scenario\select_project\table\row.html" />
+    <Content Include="Scripts\app\scenario\select_project\table\row.js" />
+    <Content Include="Scripts\app\scenario\select_project\table\table.html" />
+    <Content Include="Scripts\app\scenario\select_project\table\table.js" />
+    <Content Include="Scripts\app\scenario\select_project\table\tbody.js" />
+    <Content Include="Scripts\app\scenario\select_project\template.html" />
+    <Content Include="Scripts\app\scenario\select_project\view.js" />
+    <Content Include="Scripts\app\scenario\table\row.html" />
+    <Content Include="Scripts\app\scenario\table\row.js" />
+    <Content Include="Scripts\app\scenario\table\table.html" />
+    <Content Include="Scripts\app\scenario\table\table.js" />
+    <Content Include="Scripts\app\scenario\table\tbody.js" />
+    <Content Include="Scripts\app\scenario\template.html" />
+    <Content Include="Scripts\app\scenario\view.js" />
+    <Content Include="Scripts\app\startup.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\css\._simplePagination.css" />
+    <Content Include="Scripts\css\animate.min.css" />
+    <Content Include="Scripts\css\bootstrap-checkbox.css" />
+    <Content Include="Scripts\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Scripts\css\bootstrap-multiEmail.css" />
+    <Content Include="Scripts\css\bootstrap-tagsinput.css" />
+    <Content Include="Scripts\css\bootstrap.min.css" />
+    <Content Include="Scripts\css\fieldchooser.css" />
+    <Content Include="Scripts\css\font-awesome.min.css" />
+    <Content Include="Scripts\css\other\ie.css" />
+    <Content Include="Scripts\css\other\ie9.css" />
+    <Content Include="Scripts\css\other\mozilla.css" />
+    <Content Include="Scripts\css\select2-4.0.3.css" />
+    <Content Include="Scripts\css\select2-bootstrap.css" />
+    <Content Include="Scripts\css\simplePagination.css" />
+    <Content Include="Scripts\css\style.css" />
+    <Content Include="Scripts\css\styles.css" />
+    <Content Include="Scripts\css\sweetalert.css" />
+    <Content Include="Scripts\css\theme-default.css" />
+    <Content Include="Scripts\css\theme.css" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\fonts\FontAwesome.otf" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\fonts\ionicons.eot" />
+    <Content Include="Scripts\fonts\ionicons.ttf" />
+    <Content Include="Scripts\fonts\ionicons.woff" />
+    <Content Include="Scripts\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\app\bootstrap.css.map" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\ionicons.eot" />
+    <Content Include="Content\fonts\ionicons.ttf" />
+    <Content Include="Content\fonts\ionicons.woff" />
+    <None Include="Properties\PublishProfiles\RBC PII.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\fonts\ionicons.svg" />
+    <Content Include="Scripts\img\._logo-Advansys.png" />
+    <Content Include="Scripts\img\._logo-small%402x.png" />
+    <Content Include="Scripts\img\._logo.png" />
+    <Content Include="Scripts\img\._no-image.jpg" />
+    <Content Include="Scripts\img\favicon.png" />
+    <Content Include="Scripts\img\favicon_2.png" />
+    <Content Include="Scripts\img\logo-Advansys.png" />
+    <Content Include="Scripts\img\logo-small%402x.png" />
+    <Content Include="Scripts\img\logo-small.png" />
+    <Content Include="Scripts\img\logo.png" />
+    <Content Include="Scripts\img\logo_pii.png" />
+    <Content Include="Scripts\img\logo_piiOld.jpg" />
+    <Content Include="Scripts\img\no-image.jpg" />
+    <Content Include="Scripts\img\pagination\first_off.png" />
+    <Content Include="Scripts\img\pagination\first_on.png" />
+    <Content Include="Scripts\img\pagination\last_off.png" />
+    <Content Include="Scripts\img\pagination\last_on.png" />
+    <Content Include="Scripts\img\pagination\next_off.png" />
+    <Content Include="Scripts\img\pagination\next_on.png" />
+    <Content Include="Scripts\img\pagination\previous_off.png" />
+    <Content Include="Scripts\img\pagination\previous_on.png" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\libs\._jquery.simplePagination.js" />
+    <Content Include="Scripts\libs\._jquery.twbsPagination.min.js" />
+    <Content Include="Scripts\libs\actions.js" />
+    <Content Include="Scripts\libs\backbone.layoutmanager-1.0.0.min.js" />
+    <Content Include="Scripts\libs\backbone.marionette-3.1.0.js" />
+    <Content Include="Scripts\libs\backbone.marionette-3.1.0.min.js" />
+    <Content Include="Scripts\libs\backbone.radio-2.0.0.min.js" />
+    <Content Include="Scripts\libs\bootstrap-4.0.0-alpha.2.min.js" />
+    <Content Include="Scripts\libs\bootstrap-datetimepicker-3-v4.17.46.js" />
+    <Content Include="Scripts\libs\bootstrap-datetimepicker-3.min.js" />
+    <Content Include="Scripts\libs\bootstrap-paginator.js" />
+    <Content Include="Scripts\libs\bootstrap-slider-9.7.2.min.js" />
+    <Content Include="Scripts\libs\bootstrap-tagsinput-0.8.0.js" />
+    <Content Include="Scripts\libs\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\libs\bootstrap.min.js" />
+    <Content Include="Scripts\libs\custom\backbone.collection.js" />
+    <Content Include="Scripts\libs\custom\backbone.collection.paging.js" />
+    <Content Include="Scripts\libs\custom\backbone.custom-1.3.3.js" />
+    <Content Include="Scripts\libs\custom\backbone.layoutmanager.override.js" />
+    <Content Include="Scripts\libs\custom\backbone.model.file.upload-1.0.0.js" />
+    <Content Include="Scripts\libs\custom\backbone.model.js" />
+    <Content Include="Scripts\libs\custom\backbone.override.js" />
+    <Content Include="Scripts\libs\custom\backbone.subroute-0.4.6.js" />
+    <Content Include="Scripts\libs\custom\backbonecollection.js" />
+    <Content Include="Scripts\libs\custom\backbonemodel.js" />
+    <Content Include="Scripts\libs\custom\bootstrapValidator-0.5.2.js" />
+    <Content Include="Scripts\libs\custom\commonconfig.js" />
+    <Content Include="Scripts\libs\custom\commonfunction.js" />
+    <Content Include="Scripts\libs\custom\dayschedule.js" />
+    <Content Include="Scripts\libs\custom\defaultmodule\view-2.js" />
+    <Content Include="Scripts\libs\custom\defaultmodule\view.js" />
+    <Content Include="Scripts\libs\custom\eventaggregator.js" />
+    <Content Include="Scripts\libs\custom\filter\template.html" />
+    <Content Include="Scripts\libs\custom\filter\view.js" />
+    <Content Include="Scripts\libs\custom\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Scripts\libs\custom\ladda.jquery-1.0.0.js" />
+    <Content Include="Scripts\libs\custom\modaldialogdefault\template.html" />
+    <Content Include="Scripts\libs\custom\modaldialogdefault\view.js" />
+    <Content Include="Scripts\libs\custom\modaldialogeditfilter\template.html" />
+    <Content Include="Scripts\libs\custom\modaldialogeditfilter\view.js" />
+    <Content Include="Scripts\libs\custom\modaldialogsecond\template.html" />
+    <Content Include="Scripts\libs\custom\modaldialogsecond\view.js" />
+    <Content Include="Scripts\libs\custom\modaldialog\template.html" />
+    <Content Include="Scripts\libs\custom\modaldialog\view.js" />
+    <Content Include="Scripts\libs\custom\paging\template.html" />
+    <Content Include="Scripts\libs\custom\paging\view-backup.js" />
+    <Content Include="Scripts\libs\custom\paging\view.js" />
+    <Content Include="Scripts\libs\custom\sorting.button\template.html" />
+    <Content Include="Scripts\libs\custom\sorting.button\view.js" />
+    <Content Include="Scripts\libs\custom\subroute\router.js" />
+    <Content Include="Scripts\libs\custom\table-2\table.js" />
+    <Content Include="Scripts\libs\custom\table-2\tbody.js" />
+    <Content Include="Scripts\libs\custom\table\tbody.js" />
+    <Content Include="Scripts\libs\custom\window.tether.js" />
+    <Content Include="Scripts\libs\deep.model-0.10.4.min.js" />
+    <Content Include="Scripts\libs\highcharts.js" />
+    <Content Include="Scripts\libs\icheck.min.js" />
+    <Content Include="Scripts\libs\jquery-2.2.4.js" />
+    <Content Include="Scripts\libs\jquery-2.2.4.min.js" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\libs\jquery.cropit-0.5.1.js" />
+    <Content Include="Scripts\libs\jquery.mask.min.js" />
+    <Content Include="Scripts\libs\jquery.maxlength-2.0.1.min.js" />
+    <Content Include="Scripts\libs\jquery.panzoom-3.2.2.min.js" />
+    <Content Include="Scripts\libs\jquery.plugin-2.0.1.min.js" />
+    <Content Include="Scripts\libs\jquery.simplePagination.js" />
+    <Content Include="Scripts\libs\jquery.smoothState.min.js" />
+    <Content Include="Scripts\libs\jquery.twbsPagination.min.js" />
+    <Content Include="Scripts\libs\js.cookie-2.1.3.min.js" />
+    <Content Include="Scripts\libs\ladda-1.0.0.js" />
+    <Content Include="Scripts\libs\custom\menu\view.js" />
+    <Content Include="Scripts\libs\modernizr-2.8.3.js" />
+    <Content Include="Scripts\libs\moment-2.17.1.js" />
+    <Content Include="Scripts\libs\other\bootstrap-layout-scrollable.js" />
+    <Content Include="Scripts\libs\other\bootstrap-layout.js" />
+    <Content Include="Scripts\libs\other\IE8.js" />
+    <Content Include="Scripts\libs\other\IE9.js" />
+    <Content Include="Scripts\libs\other\jquery.history.min.js" />
+    <Content Include="Scripts\libs\require-2.3.2.min.js" />
+    <Content Include="Scripts\libs\requirejs.text-2.0.12.min.js" />
+    <Content Include="Scripts\libs\respond-1.4.2.min.js" />
+    <Content Include="Scripts\libs\select2-4.0.3.full.js" />
+    <Content Include="Scripts\libs\select2-40.0.3.full.js" />
+    <Content Include="Scripts\libs\settings.js" />
+    <Content Include="Scripts\libs\simplebar-1.1.9.min.js" />
+    <Content Include="Scripts\libs\spin.js" />
+    <Content Include="Scripts\libs\sweetalert-1.0.1.min.js" />
+    <Content Include="Scripts\libs\tether-1.4.0.min.js" />
+    <Content Include="Scripts\libs\underscore-1.8.3.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Scripts\app\correlation\risk_category\delete\" />
+    <Folder Include="Scripts\app\dashboard\calculation\" />
+    <Folder Include="Scripts\app\dashboard\functional_risk\" />
+    <Folder Include="Scripts\app\master\correlation_matrix\correlation_matrix\" />
+    <Folder Include="Scripts\dist\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2681</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2681/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

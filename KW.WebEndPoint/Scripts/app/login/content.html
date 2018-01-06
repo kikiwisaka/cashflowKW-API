@@ -1,0 +1,36 @@
+<form accept-charset="UTF-8" role="form">
+  <h2 class="form-signin-heading">
+      <img clas="logo-login" src="/Scripts/img/logo_pii.jpg" width="200">
+  </h2>
+  <div class="form-group has-feedback">
+    <label for="inputEmail">Email</label>
+    <input type="text" id="userName" name="username" class="form-control" placeholder="username" required="" autofocus="">
+  </div>
+  <div class="form-group has-feedback">
+    <label for="inputPassword">Password</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+  </div>
+  <!-- <div class="form-group rememberMe" style="padding-left:25px;">
+      <label class="checkbox">
+          <input type="checkbox" name="rememberMe"><i></i>Remember me
+      </label>
+  </div> -->
+  <div class="form-group rememberMe" style="padding-left:25px;margin-bottom: 35px;">
+      <label class="checkbox">
+          <input type="checkbox" name="rememberMe"> <span class="remembermetext">Remember me</span>
+      </label>
+  </div>
+  <button id="btnLogin" class="btn btn-lg btn-default btn-block" type="submit" obo-dologin>Log In</button>
+  <p style="text-align:center; margin-top:15px;"><a href="#forgot_password" class="forgot-password">Forgot Password?</a></p>
+  <section obo-errormessage style="display:none;">
+    <div id="loginAlert" role="alert">
+      <label class="alert alert-danger fade in">
+          <div class="validation-summary-errors" data-valmsg-summary="true">
+            <ul>
+              <li>The username or password provided is incorrect or the user maybe inactive.</li>
+            </ul>
+          </div>
+      </label>
+    </div>
+  </section>
+</form>

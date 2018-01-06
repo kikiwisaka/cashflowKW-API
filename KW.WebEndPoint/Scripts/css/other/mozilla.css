@@ -1,0 +1,21 @@
+﻿
+.form-control.mozilla {
+    border: 0 !important;
+    padding-bottom: 30px !important;
+    margin-top: 8px;
+}
+
+.mozilla-btn-sm {
+    margin-top: 3px;
+}
+
+.simulate-form input.form-control {
+    height: 28px;
+    margin-top: 7px;
+}
+#loader-wrapper > .loader {
+    left: 39%!important;
+}
+.costSummary .costum-col-summary .input-group-addon {
+    width: 0!important;
+}

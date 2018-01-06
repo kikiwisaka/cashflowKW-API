@@ -1,0 +1,3 @@
+.btn-group.open .multiselect-container input[type="checkbox"]{
+    z-index: 9999 !important;
+}

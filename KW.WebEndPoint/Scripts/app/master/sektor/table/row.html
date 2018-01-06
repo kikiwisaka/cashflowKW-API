@@ -1,0 +1,15 @@
+<td><%= NamaSektor %></td>
+<td><%= Minimum %></td>
+<td><%= Maximum %></td>
+<td><%= Definisi %></td>
+<td>
+	<% if (Status == 1) { %>
+    	<span class="label label-success">Approved</span>
+  	<% } else { %>
+    	<span class="label label-danger">-</span>
+  	<% } %>
+</td>
+<td class="text-center">
+  <span><button type="button" class="btn btn-link" name="Edit">Ubah</button></span>
+  <span><button type="button" class="btn btn-link" name="Delete">Hapus</button></span>
+</td>

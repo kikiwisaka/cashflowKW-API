@@ -1,0 +1,19 @@
+<td><%= NamaLikehood %></td>
+<td>
+    <% if(Status) { %>
+      <span class="label label-success">Iya</span>
+    <% } %>
+</td>
+<td class="text-center">
+  <!-- <span><button type="button" class="btn btn-link" name="Default">Set Default</button></span> -->
+  <a class="btn btn-link" href="<% print(`${window.location.hash}/${Id}`); %>">Info</a>
+  <span>
+  	<button type="button" class="btn btn-link" name="Edit">
+  		Ubah
+  	</button>
+  	<!-- <i class="fa fa-pencil-square-o" aria-hidden="true" name="Edit"></i>
+  	<i class="fa fa-trash" aria-hidden="true" name="Delete"></i> -->
+  </span>
+  <span><button type="button" class="btn btn-link" name="Default">Default</button></span>
+  <span><button type="button" class="btn btn-link" name="Delete">Hapus</button></span>
+</td>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8465A439-21F3-4195-9BAA-5AD83D3ED7CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KW.Domain</RootNamespace>
+    <AssemblyName>KW.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Correlation\CorrelatedProject.cs" />
+    <Compile Include="Entities\Correlation\CorrelatedProjectDetail.cs" />
+    <Compile Include="Entities\Correlation\CorrelatedSektor.cs" />
+    <Compile Include="Entities\Correlation\CorrelatedSektorDetail.cs" />
+    <Compile Include="Entities\Correlation\CorrelationRiskAntarSektor.cs" />
+    <Compile Include="Entities\Correlation\CorrelationRiskAntarProject.cs" />
+    <Compile Include="Entities\Dashboard\DashboardRiskCapitalProject.cs" />
+    <Compile Include="Entities\Master\AssetData.cs" />
+    <Compile Include="Entities\Master\ColorComment.cs" />
+    <Compile Include="Entities\OverAllComments\OverAllComments.cs" />
+    <Compile Include="Entities\Master\Matrix.cs" />
+    <Compile Include="Entities\Master\FunctionalRisk.cs" />
+    <Compile Include="Entities\Master\Comments.cs" />
+    <Compile Include="Entities\Master\CorrelationMatrix.cs" />
+    <Compile Include="Entities\Master\LikehoodDetail.cs" />
+    <Compile Include="Entities\Master\PMN.cs" />
+    <Compile Include="Entities\Master\ProjectRiskRegistrasi.cs" />
+    <Compile Include="Entities\Master\ProjectRiskStatus.cs" />
+    <Compile Include="Entities\Master\RiskRegistrasi.cs" />
+    <Compile Include="Entities\Master\Likehood.cs" />
+    <Compile Include="Entities\Master\Project.cs" />
+    <Compile Include="Entities\Master\Sektor.cs" />
+    <Compile Include="Entities\Master\Stage.cs" />
+    <Compile Include="Entities\Master\SubRiskRegistrasi.cs" />
+    <Compile Include="Entities\Master\Tahapan.cs" />
+    <Compile Include="Entities\RiskMatrix\MaksimumProjectValue.cs" />
+    <Compile Include="Entities\RiskMatrix\RiskMatrixProject.cs" />
+    <Compile Include="Entities\RiskMatrix\StageTahunRiskMatrix.cs" />
+    <Compile Include="Entities\RiskMatrix\RiskMatrixStage.cs" />
+    <Compile Include="Entities\RiskMatrix\RiskMatrix.cs" />
+    <Compile Include="Entities\RiskMatrix\StageTahunRiskMatrixDetail.cs" />
+    <Compile Include="Entities\Scenario\Scenario.cs" />
+    <Compile Include="Entities\Scenario\ScenarioDetail.cs" />
+    <Compile Include="Entities\Users\API.cs" />
+    <Compile Include="Entities\Users\APIMenu.cs" />
+    <Compile Include="Entities\Users\Menu.cs" />
+    <Compile Include="Entities\Users\Role.cs" />
+    <Compile Include="Entities\Users\RoleAccess.cs" />
+    <Compile Include="Entities\Users\RoleEmployeeType.cs" />
+    <Compile Include="Entities\Users\User.cs" />
+    <Compile Include="Entities\Users\UserRole.cs" />
+    <Compile Include="Entities\Users\UserResetPassword.cs" />
+    <Compile Include="Interfaces\Correlation\ICorrelatedProjectDetailRepository.cs" />
+    <Compile Include="Interfaces\Correlation\ICorrelatedProjectRepository.cs" />
+    <Compile Include="Interfaces\Correlation\ICorrelatedSektorDetailRepository.cs" />
+    <Compile Include="Interfaces\Correlation\ICorrelatedSektorRepository.cs" />
+    <Compile Include="Interfaces\Correlation\ICorrelationRiskAntarSektorRepository.cs" />
+    <Compile Include="Interfaces\Correlation\ICorrelationRiskAntarProjectRepository.cs" />
+    <Compile Include="Interfaces\Master\IAssetDataRepository.cs" />
+    <Compile Include="Interfaces\Master\IColorCommentRepository.cs" />
+    <Compile Include="Interfaces\OverAllComments\IOverAllCommentsRepository.cs" />
+    <Compile Include="Interfaces\Master\IMatrixRepository.cs" />
+    <Compile Include="Interfaces\Master\IFunctionalRiskRepository.cs" />
+    <Compile Include="Interfaces\Master\ICommentsRepository.cs" />
+    <Compile Include="Interfaces\Master\ICorrelationMatrixRepository.cs" />
+    <Compile Include="Interfaces\Master\ILikehoodDetailRepository.cs" />
+    <Compile Include="Interfaces\Master\IPMNRepository.cs" />
+    <Compile Include="Interfaces\Master\IProjectRiskRegistrasiRepository.cs" />
+    <Compile Include="Interfaces\Master\IProjectRiskStatusRepository.cs" />
+    <Compile Include="Interfaces\Master\ISubRiskRegistrasiRepository .cs" />
+    <Compile Include="Interfaces\Master\IRiskRegistrasiRepository.cs" />
+    <Compile Include="Interfaces\Master\ILikehoodRepository.cs" />
+    <Compile Include="Interfaces\Master\IProjectRepository.cs" />
+    <Compile Include="Interfaces\Master\ISektorRepository.cs" />
+    <Compile Include="Interfaces\Master\IStageRepository.cs" />
+    <Compile Include="Interfaces\Master\ITahapanRepository.cs" />
+    <Compile Include="Interfaces\RiskMatrix\IMaksimumProjectValueRepository.cs" />
+    <Compile Include="Interfaces\RiskMatrix\IRiskMatrixProjectRepository.cs" />
+    <Compile Include="Interfaces\RiskMatrix\IStageTahunRiskMatrixDetailRepository.cs" />
+    <Compile Include="Interfaces\RiskMatrix\IStageTahunRiskMatrixRepository.cs" />
+    <Compile Include="Interfaces\RiskMatrix\IRiskMatrixStageRepository.cs" />
+    <Compile Include="Interfaces\RiskMatrix\IRiskMatrixRepository.cs" />
+    <Compile Include="Interfaces\Scenario\IScenarioDetailRepository.cs" />
+    <Compile Include="Interfaces\Scenario\IScenarioRepository.cs" />
+    <Compile Include="Interfaces\User\IUserResetPasswordRepository.cs" />
+    <Compile Include="Interfaces\User\IMenuRepository.cs" />
+    <Compile Include="Interfaces\User\IUserRoleRepository.cs" />
+    <Compile Include="Interfaces\User\IUserRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KW.Common\KW.Common.csproj">
+      <Project>{52A6C337-1055-47D5-A450-FEB7EEE4747A}</Project>
+      <Name>KW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KW.Core\KW.Core.csproj">
+      <Project>{CD05A097-22A3-427F-A420-8C04816B2F34}</Project>
+      <Name>KW.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
