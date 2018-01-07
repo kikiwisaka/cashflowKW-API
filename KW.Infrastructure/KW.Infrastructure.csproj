@@ -60,47 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExternalServices\EmailClients\GmailClient.cs" />
-    <Compile Include="Migrations\201711020417290_init rbc_pii.cs" />
-    <Compile Include="Migrations\201711020417290_init rbc_pii.Designer.cs">
-      <DependentUpon>201711020417290_init rbc_pii.cs</DependentUpon>
-    </Compile>
     <Compile Include="Persistance\CustomUserStore.cs" />
     <Compile Include="Persistance\DbContext\DatabaseContext.cs" />
     <Compile Include="DatabaseInitializer.cs" />
     <Compile Include="EntityFrameworkConfiguration.cs" />
     <Compile Include="Persistance\DbContext\IDatabaseContext.cs" />
-    <Compile Include="Persistance\EntityConfig\Correlation\CorrelatedProjectConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Correlation\CorrelatedProjectDetailConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Correlation\CorrelatedSektorDetailConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Correlation\CorrelationRiskAntarSektorConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Correlation\CorrelationRiskAntarProjectConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Correlation\CorrelatedSektorConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\FunctionalRiskConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\MatrixConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\AssetDataConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\ColorCommentConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\CommentsConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\CorrelationMatrixConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\LikehoodConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\LikehoodDetailConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\PMNConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\ProjectConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\ProjectRiskRegistrasiConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\ProjectRiskStatusConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\SubRiskRegistrasiConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\RiskRegistrasiConfig.cs" />
     <Compile Include="Persistance\EntityConfig\Master\SektorConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\StageConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\TahapanConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\OverAllComments\OverAllCommentsConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\RiskMatrix\RiskMatrixProjectConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\RiskMatrix\RiskMatrixStageConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\RiskMatrix\MaksimumProjectValueConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\RiskMatrix\StageTahunRiskMatrixConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\RiskMatrix\RiskMatrixConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\RiskMatrix\StageTahunRiskMatrixDetailConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Scenario\ScenarioConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Scenario\ScenarioDetailConfig.cs" />
     <Compile Include="Persistance\EntityConfig\User\UseResetPasswordConfig.cs" />
     <Compile Include="Persistance\EntityConfig\User\UseRoleConfig.cs" />
     <Compile Include="Persistance\EntityConfig\User\UserConfig.cs" />
@@ -113,38 +78,7 @@
     <Compile Include="Persistance\Migrations\Configuration.cs" />
     <Compile Include="Persistance\Migrations\Seeder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Correlation\CorrelatedProjectDetailRepository.cs" />
-    <Compile Include="Repositories\Correlation\CorrelatedProjectRepository.cs" />
-    <Compile Include="Repositories\Correlation\CorrelatedSektorDetailRepository.cs" />
-    <Compile Include="Repositories\Correlation\CorrelatedSektorRepository.cs" />
-    <Compile Include="Repositories\Correlation\CorrelationRiskAntarSektorRepository.cs" />
-    <Compile Include="Repositories\Correlation\CorrelationRiskAntarProjectRepository.cs" />
-    <Compile Include="Repositories\Master\FunctionalRiskRepository.cs" />
-    <Compile Include="Repositories\Master\MatrixRepository.cs" />
-    <Compile Include="Repositories\Master\AssetDataRepository.cs" />
-    <Compile Include="Repositories\Master\ColorCommentRepository.cs" />
-    <Compile Include="Repositories\Master\CommentsRepository.cs" />
-    <Compile Include="Repositories\Master\CorrelationMatrixRepository.cs" />
-    <Compile Include="Repositories\Master\LikehoodDetailRepository.cs" />
-    <Compile Include="Repositories\Master\LikehoodRepository.cs" />
-    <Compile Include="Repositories\Master\PMNRepository.cs" />
-    <Compile Include="Repositories\Master\ProjectRepository.cs" />
-    <Compile Include="Repositories\Master\ProjectRiskRegistrasiRepository.cs" />
-    <Compile Include="Repositories\Master\ProjectRiskStatusRepository.cs" />
-    <Compile Include="Repositories\Master\SubRiskRegistrasiRepository.cs" />
-    <Compile Include="Repositories\Master\RiskRegistrasiRepository.cs" />
     <Compile Include="Repositories\Master\SektorRepository.cs" />
-    <Compile Include="Repositories\Master\StageRepository.cs" />
-    <Compile Include="Repositories\Master\TahapanRepository.cs" />
-    <Compile Include="Repositories\OverAllComments\OverAllCommentsRepository.cs" />
-    <Compile Include="Repositories\RiskMatrix\RiskMatrixProjectRepository.cs" />
-    <Compile Include="Repositories\RiskMatrix\StageTahunRiskMatrixDetailRepository.cs" />
-    <Compile Include="Repositories\RiskMatrix\StageTahunRiskMatrixRepository.cs" />
-    <Compile Include="Repositories\RiskMatrix\MaksimumProjectValueRepository.cs" />
-    <Compile Include="Repositories\RiskMatrix\RiskMatrixStageRepository.cs" />
-    <Compile Include="Repositories\RiskMatrix\RiskMatrixRepository.cs" />
-    <Compile Include="Repositories\Scenario\ScenarioDetailRepository.cs" />
-    <Compile Include="Repositories\Scenario\ScenarioRepository.cs" />
     <Compile Include="Repositories\User\MenuRepository.cs" />
     <Compile Include="Repositories\User\UserResetPasswordRepository.cs" />
     <Compile Include="Repositories\User\UserRoleRepository.cs" />
@@ -171,42 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExternalServices\EmailMessage\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711020417290_init rbc_pii.resx">
-      <DependentUpon>201711020417290_init rbc_pii.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Persistance\Migrations\tblAssetdatas.sql" />
-    <Content Include="Persistance\Migrations\tblColorComments.sql" />
-    <Content Include="Persistance\Migrations\tblCommentss.sql" />
-    <Content Include="Persistance\Migrations\tblCorrelatedSectors.sql" />
-    <Content Include="Persistance\Migrations\tblCorrelationMatrixs.sql" />
-    <Content Include="Persistance\Migrations\tblCorrelationRiskAntarSectorDetails.sql" />
-    <Content Include="Persistance\Migrations\tblCorrelationRiskAntarSectors.sql" />
-    <Content Include="Persistance\Migrations\tblFunctionalRisks.sql" />
-    <Content Include="Persistance\Migrations\tblLikehoodDetails.sql" />
-    <Content Include="Persistance\Migrations\tblLikehoods.sql" />
-    <Content Include="Persistance\Migrations\tblMaksimumProjectValues.sql" />
-    <Content Include="Persistance\Migrations\tblMatrixs.sql" />
-    <Content Include="Persistance\Migrations\tblOverAllCommentss.sql" />
-    <Content Include="Persistance\Migrations\tblPMNs.sql" />
-    <Content Include="Persistance\Migrations\tblProjectRiskRegistrasis.sql" />
-    <Content Include="Persistance\Migrations\tblProjectRiskStatus.sql" />
-    <Content Include="Persistance\Migrations\tblProjects.sql" />
-    <Content Include="Persistance\Migrations\tblRiskMatrixProjects.sql" />
-    <Content Include="Persistance\Migrations\tblRiskMatrixs.sql" />
-    <Content Include="Persistance\Migrations\tblRiskMatrixStages.sql" />
-    <Content Include="Persistance\Migrations\tblRiskRegistrasis.sql" />
-    <Content Include="Persistance\Migrations\tblScenarioDetails.sql" />
-    <Content Include="Persistance\Migrations\tblScenarios.sql" />
-    <Content Include="Persistance\Migrations\tblSektors.sql" />
-    <Content Include="Persistance\Migrations\tblStages.sql" />
-    <Content Include="Persistance\Migrations\tblStageTahunRiskMatrixDetails.sql" />
-    <Content Include="Persistance\Migrations\tblStageTahunRiskMatrixs.sql" />
-    <Content Include="Persistance\Migrations\tblSubRiskRegistrasis.sql" />
-    <Content Include="Persistance\Migrations\tblTahapan.sql" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

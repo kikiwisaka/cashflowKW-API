@@ -26,9 +26,6 @@ namespace KW.Infrastructure.EntityConfig
             Property(x => x.UpdateDate).HasColumnName("updateDate");
             Property(x => x.IsDelete).HasColumnName("isDelete");
             Property(x => x.DeleteDate).HasColumnName("deleteDate");
-
-            //relationship
-            HasMany(t => t.Projects).WithRequired(t => t.Sektor).HasForeignKey(t => t.SektorId);
         }
     }
 }

@@ -1,12 +1,13 @@
-﻿using KW.Core;
-using KW.Domain;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using KW.Application.DTO;
 using KW.Application.Params;
 using System.Linq;
+using KW.Domain;
+using KW.Core;
+using KW.Application;
 
-namespace KW.Application
+namespace HR.Application
 {
     public class MenuService : IMenuService
     {

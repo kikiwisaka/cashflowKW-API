@@ -22,12 +22,9 @@ namespace KW.Domain
         public DateTime? DeleteDate { get; private set; }
         public bool Status { get; private set; }
 
-        public virtual ICollection<Project> Projects { get; private set; }
-
 
         public Sektor()
         {
-            this.Projects = new List<Project>();
         }
 
         public Sektor(string namaSektor, decimal minimum, decimal maximum, string definisi, int? createBy, DateTime? createDate)
