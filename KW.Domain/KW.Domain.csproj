@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Master\Budget.cs" />
     <Compile Include="Entities\Master\Sektor.cs" />
     <Compile Include="Entities\Users\API.cs" />
     <Compile Include="Entities\Users\APIMenu.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Entities\Users\User.cs" />
     <Compile Include="Entities\Users\UserRole.cs" />
     <Compile Include="Entities\Users\UserResetPassword.cs" />
+    <Compile Include="Interfaces\Master\IBudgetRepository.cs" />
     <Compile Include="Interfaces\Master\ISektorRepository.cs" />
     <Compile Include="Interfaces\User\IUserResetPasswordRepository.cs" />
     <Compile Include="Interfaces\User\IMenuRepository.cs" />

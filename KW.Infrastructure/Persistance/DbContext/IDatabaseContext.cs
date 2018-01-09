@@ -13,6 +13,7 @@ namespace KW.Infrastructure
     {
         //Master Data
         IDbSet<Sektor> Sektors { get; set; }
+        IDbSet<Budget> Budgets { get; set; }
 
 
         //User

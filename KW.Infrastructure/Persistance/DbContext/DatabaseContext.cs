@@ -9,7 +9,8 @@ namespace KW.Infrastructure
     {
         //Master Data
         public IDbSet<Sektor> Sektors { get; set; }
-       
+        public IDbSet<Budget> Budgets { get; set; }
+
 
         //User
         public IDbSet<API> APIs { get; set; }
@@ -38,6 +39,7 @@ namespace KW.Infrastructure
 
             //Master
             modelBuilder.Configurations.Add(new SektorConfig());
+            modelBuilder.Configurations.Add(new BudgetConfig());
 
             //User
             modelBuilder.Configurations.Add(new APIConfig());

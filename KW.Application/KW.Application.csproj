@@ -78,6 +78,7 @@
     <Compile Include="DTOs\General\YearDTO.cs" />
     <Compile Include="DTOs\General\HelperDTO.cs" />
     <Compile Include="DTOs\General\PaginationDTO.cs" />
+    <Compile Include="DTOs\Master\BudgetDTO.cs" />
     <Compile Include="DTOs\Master\SektorDTO.cs" />
     <Compile Include="DTOs\User\MenuDTO.cs" />
     <Compile Include="DTOs\User\RoleAccess.cs" />
@@ -90,6 +91,8 @@
     <Compile Include="Params\Filters\PaginationDetailParam.cs" />
     <Compile Include="Params\Filters\PaginationParam.cs" />
     <Compile Include="Params\Filters\EmployeeListParameter.cs" />
+    <Compile Include="Params\Master\Budget\BudgetListParam.cs" />
+    <Compile Include="Params\Master\Budget\BudgetParam.cs" />
     <Compile Include="Params\Master\Sektor\SektorListParam.cs" />
     <Compile Include="Params\Master\Sektor\SektorParam.cs" />
     <Compile Include="Params\User\MenuAccessLiteParameters.cs" />
@@ -99,6 +102,8 @@
     <Compile Include="Services\Interfaces\IEmailService.cs" />
     <Compile Include="Services\Interfaces\IUserResetPasswordService.cs" />
     <Compile Include="Services\Interfaces\IUserService.cs" />
+    <Compile Include="Services\Master\Budget\BudgetService.cs" />
+    <Compile Include="Services\Master\Budget\IBudgetService.cs" />
     <Compile Include="Services\MenuApplication.cs" />
     <Compile Include="Services\SektorApplication.cs" />
     <Compile Include="Services\EmailService.cs" />
