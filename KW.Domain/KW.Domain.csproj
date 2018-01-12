@@ -57,21 +57,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Master\Budget.cs" />
-    <Compile Include="Entities\Users\API.cs" />
-    <Compile Include="Entities\Users\APIMenu.cs" />
-    <Compile Include="Entities\Users\Menu.cs" />
-    <Compile Include="Entities\Users\Role.cs" />
-    <Compile Include="Entities\Users\RoleAccess.cs" />
-    <Compile Include="Entities\Users\RoleEmployeeType.cs" />
-    <Compile Include="Entities\Users\User.cs" />
-    <Compile Include="Entities\Users\UserRole.cs" />
-    <Compile Include="Entities\Users\UserResetPassword.cs" />
-    <Compile Include="Interfaces\Master\IBudgetRepository.cs" />
-    <Compile Include="Interfaces\User\IUserResetPasswordRepository.cs" />
-    <Compile Include="Interfaces\User\IMenuRepository.cs" />
-    <Compile Include="Interfaces\User\IUserRoleRepository.cs" />
-    <Compile Include="Interfaces\User\IUserRepository.cs" />
+    <Compile Include="Entities\Master\Budget\Budget.cs" />
+    <Compile Include="Entities\UserManagement\API\API.cs" />
+    <Compile Include="Entities\UserManagement\APIMenu\APIMenu.cs" />
+    <Compile Include="Entities\UserManagement\Menu\Menu.cs" />
+    <Compile Include="Entities\UserManagement\Role\Role.cs" />
+    <Compile Include="Entities\UserManagement\RoleAccess\RoleAccess.cs" />
+    <Compile Include="Entities\UserManagement\RoleEmployeeType\RoleEmployeeType.cs" />
+    <Compile Include="Entities\UserManagement\User\User.cs" />
+    <Compile Include="Entities\UserManagement\UserRole\UserRole.cs" />
+    <Compile Include="Entities\UserManagement\UserResetPassword\UserResetPassword.cs" />
+    <Compile Include="Entities\Master\Budget\IBudgetRepository.cs" />
+    <Compile Include="Entities\UserManagement\UserResetPassword\IUserResetPasswordRepository.cs" />
+    <Compile Include="Entities\UserManagement\Menu\IMenuRepository.cs" />
+    <Compile Include="Entities\UserManagement\UserRole\IUserRoleRepository.cs" />
+    <Compile Include="Entities\UserManagement\User\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
