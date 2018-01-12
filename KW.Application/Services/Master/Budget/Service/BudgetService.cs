@@ -76,5 +76,20 @@ namespace KW.Application
                 throw new ApplicationException(string.Format("Budget name {0} already exist.", budgetName));
             }
         }
+
+        public int Delete(int id, int updatedBy, DateTime updatedDate)
+        {
+            var model = this.Get(id);
+            Validate.NotNull(model, "Budget name does is not found.");
+
+            using (_unitOfWork)
+            {
+                model.Delete(updatedBy, updatedDate);
+                _budgetRepository.Update(model);
+                _unitOfWork.Commit();
+                id = model.Id;
+            }
+            return id;
+        }
     }
 }

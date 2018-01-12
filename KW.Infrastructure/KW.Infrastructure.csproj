@@ -60,9 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExternalServices\EmailClients\GmailClient.cs" />
-    <Compile Include="Migrations\201801122134523_create Budget db.cs" />
-    <Compile Include="Migrations\201801122134523_create Budget db.Designer.cs">
-      <DependentUpon>201801122134523_create Budget db.cs</DependentUpon>
+    <Compile Include="Migrations\201801122225469_remove sektor.cs" />
+    <Compile Include="Migrations\201801122225469_remove sektor.Designer.cs">
+      <DependentUpon>201801122225469_remove sektor.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistance\CustomUserStore.cs" />
     <Compile Include="Persistance\DbContext\DatabaseContext.cs" />
@@ -70,7 +70,6 @@
     <Compile Include="EntityFrameworkConfiguration.cs" />
     <Compile Include="Persistance\DbContext\IDatabaseContext.cs" />
     <Compile Include="Persistance\EntityConfig\Master\BudgetConfig.cs" />
-    <Compile Include="Persistance\EntityConfig\Master\SektorConfig.cs" />
     <Compile Include="Persistance\EntityConfig\User\UseResetPasswordConfig.cs" />
     <Compile Include="Persistance\EntityConfig\User\UseRoleConfig.cs" />
     <Compile Include="Persistance\EntityConfig\User\UserConfig.cs" />
@@ -84,7 +83,6 @@
     <Compile Include="Persistance\Migrations\Seeder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Master\BudgetRepository.cs" />
-    <Compile Include="Repositories\Master\SektorRepository.cs" />
     <Compile Include="Repositories\User\MenuRepository.cs" />
     <Compile Include="Repositories\User\UserResetPasswordRepository.cs" />
     <Compile Include="Repositories\User\UserRoleRepository.cs" />
@@ -113,8 +111,8 @@
     <Folder Include="ExternalServices\EmailMessage\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801122134523_create Budget db.resx">
-      <DependentUpon>201801122134523_create Budget db.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801122225469_remove sektor.resx">
+      <DependentUpon>201801122225469_remove sektor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

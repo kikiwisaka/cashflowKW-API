@@ -75,46 +75,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\General\YearDTO.cs" />
-    <Compile Include="DTOs\General\HelperDTO.cs" />
-    <Compile Include="DTOs\General\PaginationDTO.cs" />
+    <Compile Include="Services\General\DTO\YearDTO.cs" />
+    <Compile Include="Services\General\DTO\HelperDTO.cs" />
+    <Compile Include="Services\General\DTO\PaginationDTO.cs" />
     <Compile Include="Services\Master\Budget\DTO\BudgetDTO.cs" />
-    <Compile Include="DTOs\Master\SektorDTO.cs" />
-    <Compile Include="DTOs\User\MenuDTO.cs" />
-    <Compile Include="DTOs\User\RoleAccess.cs" />
-    <Compile Include="DTOs\User\RoleDTO.cs" />
-    <Compile Include="DTOs\User\UserDTO.cs" />
-    <Compile Include="DTOs\User\UserMaskingDTO.cs" />
-    <Compile Include="DTOs\User\UserRoleDTO.cs" />
-    <Compile Include="Params\Filters\GeneralCollectionParameter.cs" />
-    <Compile Include="Params\Filters\GeneralFilterParameter.cs" />
-    <Compile Include="Params\Filters\PaginationDetailParam.cs" />
-    <Compile Include="Params\Filters\PaginationParam.cs" />
-    <Compile Include="Params\Filters\EmployeeListParameter.cs" />
+    <Compile Include="Services\UserManagement\DTO\MenuDTO.cs" />
+    <Compile Include="Services\UserManagement\DTO\RoleAccess.cs" />
+    <Compile Include="Services\UserManagement\DTO\RoleDTO.cs" />
+    <Compile Include="Services\UserManagement\DTO\UserDTO.cs" />
+    <Compile Include="Services\UserManagement\DTO\UserMaskingDTO.cs" />
+    <Compile Include="Services\UserManagement\DTO\UserRoleDTO.cs" />
+    <Compile Include="Services\General\Param\Filters\GeneralCollectionParameter.cs" />
+    <Compile Include="Services\General\Param\Filters\GeneralFilterParameter.cs" />
+    <Compile Include="Services\General\Param\Filters\PaginationDetailParam.cs" />
+    <Compile Include="Services\General\Param\Filters\PaginationParam.cs" />
+    <Compile Include="Services\General\Param\Filters\EmployeeListParameter.cs" />
     <Compile Include="Services\Master\Budget\Param\BudgetListParam.cs" />
     <Compile Include="Services\Master\Budget\Param\BudgetParam.cs" />
-    <Compile Include="Params\Master\Sektor\SektorListParam.cs" />
-    <Compile Include="Params\Master\Sektor\SektorParam.cs" />
-    <Compile Include="Params\User\MenuAccessLiteParameters.cs" />
+    <Compile Include="Services\UserManagement\Param\MenuAccessLiteParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Interfaces\IMenuService.cs" />
-    <Compile Include="Services\Interfaces\ISektorService.cs" />
-    <Compile Include="Services\Interfaces\IEmailService.cs" />
-    <Compile Include="Services\Interfaces\IUserResetPasswordService.cs" />
-    <Compile Include="Services\Interfaces\IUserService.cs" />
-    <Compile Include="Services\Master\Budget\Param\Service\BudgetService.cs" />
-    <Compile Include="Services\Master\Budget\Param\Service\IBudgetService.cs" />
-    <Compile Include="Services\MenuApplication.cs" />
-    <Compile Include="Services\SektorApplication.cs" />
-    <Compile Include="Services\EmailService.cs" />
-    <Compile Include="Services\UserApplication.cs" />
-    <Compile Include="Services\UserResetPasswordApplication.cs" />
+    <Compile Include="Services\UserManagement\Service\IMenuService.cs" />
+    <Compile Include="Services\UserManagement\Service\IEmailService.cs" />
+    <Compile Include="Services\UserManagement\Service\IUserResetPasswordService.cs" />
+    <Compile Include="Services\UserManagement\Service\IUserService.cs" />
+    <Compile Include="Services\Master\Budget\Service\BudgetService.cs" />
+    <Compile Include="Services\Master\Budget\Service\IBudgetService.cs" />
+    <Compile Include="Services\UserManagement\Service\MenuApplication.cs" />
+    <Compile Include="Services\UserManagement\Service\EmailService.cs" />
+    <Compile Include="Services\UserManagement\Service\UserApplication.cs" />
+    <Compile Include="Services\UserManagement\Service\UserResetPasswordApplication.cs" />
     <Compile Include="Templates\Email\RegisterNewUser.cs" />
     <Compile Include="Templates\Email\ResetPassword.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-    <Folder Include="Params\Master\Budget\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\AHCBlowfish.dll" />

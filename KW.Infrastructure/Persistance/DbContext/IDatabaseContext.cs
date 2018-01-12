@@ -12,7 +12,6 @@ namespace KW.Infrastructure
     public interface IDatabaseContext
     {
         //Master Data
-        IDbSet<Sektor> Sektors { get; set; }
         IDbSet<Budget> Budgets { get; set; }
 
 

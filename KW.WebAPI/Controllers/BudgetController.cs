@@ -14,25 +14,25 @@ using System.Web.Routing;
 
 namespace KW.Presentation.WebAPI.Controllers
 {
-    public class SektorController : BaseAPIController
+    public class BudgetController : BaseAPIController
     {
-        private readonly ISektorService _sektorService;
+        private readonly IBudgetService _budgetService;
 
-        public SektorController(ISektorService sektorService)
+        public BudgetController(IBudgetService budgetService)
         {
-            _sektorService = sektorService;
+            _budgetService = budgetService;
         }
 
-        //GET api/sektor
+        //GET api/budget
         [HttpGet]
-        public IHttpActionResult Get([FromUri] SektorListParameter param)
+        public IHttpActionResult Get([FromUri] BudgetListParameter param)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    IList<Sektor> sektors = _sektorService.GetAll().ToList();
-                    if(param.IsPagination())
+                    IList<Budget> budgets = _budgetService.GetAll().ToList();
+                    if (param.IsPagination())
                     {
                         string keyword = string.Empty;
                         string field = string.Empty;
@@ -44,18 +44,18 @@ namespace KW.Presentation.WebAPI.Controllers
                         int skip = 0;
                         if (param.PageNo > 0)
                         {
-                            skip = (param.PageNo -1) * param.PageSize;
+                            skip = (param.PageNo - 1) * param.PageSize;
                         }
 
-                        int totalRows = _sektorService.GetAll().Count();
+                        int totalRows = _budgetService.GetAll().Count();
                         var totalPage = totalRows / param.PageSize;
                         var totalPages = (int)Math.Ceiling((double)totalRows / param.PageSize);
                         if (totalPages < 0)
                             totalPages = 0;
 
-                        var result = sektors.Skip(skip).Take(param.PageSize).ToList();
+                        var result = budgets.Skip(skip).Take(param.PageSize).ToList();
 
-                        IList<SektorDTO> colls = SektorDTO.From(result);
+                        IList<BudgetDTO> colls = BudgetDTO.From(result);
 
                         PaginationDTO page = new PaginationDTO();
                         page.PageCount = totalPages;
@@ -67,10 +67,10 @@ namespace KW.Presentation.WebAPI.Controllers
                     }
                     else
                     {
-                        IList<SektorDTO> dto = SektorDTO.From(sektors);
+                        IList<BudgetDTO> dto = BudgetDTO.From(budgets);
                         return Ok(dto);
                     }
-                    
+
                 }
                 else
                 {
@@ -93,9 +93,9 @@ namespace KW.Presentation.WebAPI.Controllers
         {
             try
             {
-                var result = _sektorService.Get(id);
-                SektorDTO sektorDTO = SektorDTO.From(result);
-                return Ok(sektorDTO);
+                var result = _budgetService.Get(id);
+                BudgetDTO budgetDTO = BudgetDTO.From(result);
+                return Ok(budgetDTO);
             }
             catch (Exception ex)
             {
@@ -106,9 +106,9 @@ namespace KW.Presentation.WebAPI.Controllers
             }
         }
 
-        //POST api/sektor
+        //POST api/budget
         [HttpPost]
-        public IHttpActionResult Add(SektorParam param)
+        public IHttpActionResult Add(BudgetParam param)
         {
             try
             {
@@ -117,10 +117,10 @@ namespace KW.Presentation.WebAPI.Controllers
                     int userId = UserHelper.GetCurrentUserId();
                     DateTime getDate = DateHelper.GetDateTime();
 
-                    param.CreateDate = getDate;
-                    param.CreateBy = userId;
+                    param.CreatedDate = getDate;
+                    param.CreatedBy = userId;
 
-                    int id = _sektorService.Add(param);
+                    int id = _budgetService.Add(param);
                     return Ok(id);
                 }
                 else
@@ -138,9 +138,9 @@ namespace KW.Presentation.WebAPI.Controllers
             }
         }
 
-        //PUT api/sektor/id
+        //PUT api/budget/id
         [HttpPut]
-        public IHttpActionResult Update(int id, [FromBody]SektorParam param)
+        public IHttpActionResult Update(int id, [FromBody]BudgetParam param)
         {
             try
             {
@@ -149,10 +149,10 @@ namespace KW.Presentation.WebAPI.Controllers
                     int userId = UserHelper.GetCurrentUserId();
                     DateTime getDate = DateHelper.GetDateTime();
 
-                    param.UpdateDate = getDate;
-                    param.UpdateBy = userId;
+                    param.UpdatedDate = getDate;
+                    param.UpdatedBy = userId;
 
-                    int result = _sektorService.Update(id, param);
+                    int result = _budgetService.Update(id, param);
                     return Ok(result);
                 }
                 else
@@ -170,7 +170,7 @@ namespace KW.Presentation.WebAPI.Controllers
             }
         }
 
-        //DELETE api/sektor/id
+        //DELETE api/budget/id
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
@@ -180,7 +180,7 @@ namespace KW.Presentation.WebAPI.Controllers
                 {
                     int userId = UserHelper.GetCurrentUserId();
                     DateTime getDate = DateHelper.GetDateTime();
-                    int result = _sektorService.Delete(id, userId, getDate);
+                    int result = _budgetService.Delete(id, userId, getDate);
                     return Ok(result);
                 }
                 else

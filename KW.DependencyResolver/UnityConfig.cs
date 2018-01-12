@@ -30,13 +30,13 @@ namespace KW.DependencyResolver
             container.RegisterType<IUserRoleRepository, UserRoleRepository>();
             container.RegisterType<IMenuRepository, MenuRepository>();
             container.RegisterType<IUserResetPasswordRepository, UserResetPasswordRepository>();
-            container.RegisterType<ISektorRepository, SektorRepository>();
+            container.RegisterType<IBudgetRepository, BudgetRepository>();
 
             //Services
             container.RegisterType<IUserService, UserService>();
             container.RegisterType<IEmailService, EmailService>();
             container.RegisterType<IUserResetPasswordService, UserResetPasswordService>();
-            container.RegisterType<ISektorService, SektorService>();
+            container.RegisterType<IBudgetService, BudgetService>();
 
 
             //Configs

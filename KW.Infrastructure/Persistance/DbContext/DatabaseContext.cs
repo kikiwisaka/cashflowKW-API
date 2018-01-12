@@ -8,7 +8,6 @@ namespace KW.Infrastructure
     public class DatabaseContext : DbContext, IDatabaseContext
     {
         //Master Data
-        public IDbSet<Sektor> Sektors { get; set; }
         public IDbSet<Budget> Budgets { get; set; }
 
 
@@ -38,7 +37,6 @@ namespace KW.Infrastructure
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
             //Master
-            modelBuilder.Configurations.Add(new SektorConfig());
             modelBuilder.Configurations.Add(new BudgetConfig());
 
             //User
