@@ -12,6 +12,10 @@ namespace KW.Domain
         public int? UpdatedBy { get; private set; }
         public DateTime? UpdatedDate { get; private set; }
         public bool? IsDeleted { get; private set; }
+        
+        //navigation properties
+        //public virtual Income Income{ get; set; }
+
 
         public Budget() { }
 

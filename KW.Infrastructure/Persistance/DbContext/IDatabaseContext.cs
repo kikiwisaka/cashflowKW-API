@@ -14,6 +14,9 @@ namespace KW.Infrastructure
         //Master Data
         IDbSet<Budget> Budgets { get; set; }
 
+        //Transaction
+        IDbSet<Income> Incomes { get; set; }
+
 
         //User
         IDbSet<API> APIs { get; set; }

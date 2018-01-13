@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Master\Budget\Budget.cs" />
+    <Compile Include="Entities\Transaction\Income\Income.cs" />
+    <Compile Include="Entities\Transaction\Income\IIncomeRepository.cs" />
     <Compile Include="Entities\UserManagement\API\API.cs" />
     <Compile Include="Entities\UserManagement\APIMenu\APIMenu.cs" />
     <Compile Include="Entities\UserManagement\Menu\Menu.cs" />

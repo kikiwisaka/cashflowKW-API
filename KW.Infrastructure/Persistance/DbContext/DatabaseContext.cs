@@ -10,6 +10,9 @@ namespace KW.Infrastructure
         //Master Data
         public IDbSet<Budget> Budgets { get; set; }
 
+        //Transaction
+        public IDbSet<Income> Incomes { get; set; }
+
 
         //User
         public IDbSet<API> APIs { get; set; }
@@ -38,6 +41,10 @@ namespace KW.Infrastructure
 
             //Master
             modelBuilder.Configurations.Add(new BudgetConfig());
+
+            //Transaction
+            modelBuilder.Configurations.Add(new IncomeConfig());
+
 
             //User
             modelBuilder.Configurations.Add(new APIConfig());

@@ -79,6 +79,11 @@
     <Compile Include="Services\General\DTO\HelperDTO.cs" />
     <Compile Include="Services\General\DTO\PaginationDTO.cs" />
     <Compile Include="Services\Master\Budget\DTO\BudgetDTO.cs" />
+    <Compile Include="Services\Transaction\Income\DTO\IncomeDTO.cs" />
+    <Compile Include="Services\Transaction\Income\Param\IncomeListParam.cs" />
+    <Compile Include="Services\Transaction\Income\Param\IncomeParam.cs" />
+    <Compile Include="Services\Transaction\Income\Service\IncomeService.cs" />
+    <Compile Include="Services\Transaction\Income\Service\IIncomeService.cs" />
     <Compile Include="Services\UserManagement\DTO\MenuDTO.cs" />
     <Compile Include="Services\UserManagement\DTO\RoleAccess.cs" />
     <Compile Include="Services\UserManagement\DTO\RoleDTO.cs" />
