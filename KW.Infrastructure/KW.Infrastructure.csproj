@@ -60,9 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExternalServices\EmailClients\GmailClient.cs" />
-    <Compile Include="Migrations\201801122225469_remove sektor.cs" />
-    <Compile Include="Migrations\201801122225469_remove sektor.Designer.cs">
-      <DependentUpon>201801122225469_remove sektor.cs</DependentUpon>
+    <Compile Include="Migrations\201801142116358_create income model.cs" />
+    <Compile Include="Migrations\201801142116358_create income model.Designer.cs">
+      <DependentUpon>201801142116358_create income model.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistance\CustomUserStore.cs" />
     <Compile Include="Persistance\DbContext\DatabaseContext.cs" />
@@ -113,8 +113,8 @@
     <Folder Include="ExternalServices\EmailMessage\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801122225469_remove sektor.resx">
-      <DependentUpon>201801122225469_remove sektor.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801142116358_create income model.resx">
+      <DependentUpon>201801142116358_create income model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

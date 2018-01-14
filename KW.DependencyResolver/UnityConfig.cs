@@ -31,12 +31,14 @@ namespace KW.DependencyResolver
             container.RegisterType<IMenuRepository, MenuRepository>();
             container.RegisterType<IUserResetPasswordRepository, UserResetPasswordRepository>();
             container.RegisterType<IBudgetRepository, BudgetRepository>();
+            container.RegisterType<IIncomeRepository, IncomeRepository>();
 
             //Services
             container.RegisterType<IUserService, UserService>();
             container.RegisterType<IEmailService, EmailService>();
             container.RegisterType<IUserResetPasswordService, UserResetPasswordService>();
             container.RegisterType<IBudgetService, BudgetService>();
+            container.RegisterType<IIncomeService, IncomeService>();
 
 
             //Configs

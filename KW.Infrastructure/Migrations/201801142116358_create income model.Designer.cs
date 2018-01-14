@@ -7,13 +7,13 @@ namespace KW.Infrastructure
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class removesektor : IMigrationMetadata
+    public sealed partial class createincomemodel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(removesektor));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(createincomemodel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801122225469_remove sektor"; }
+            get { return "201801142116358_create income model"; }
         }
         
         string IMigrationMetadata.Source

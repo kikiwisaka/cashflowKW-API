@@ -9,26 +9,27 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 
+
 namespace KW.Presentation.WebAPI.Controllers
 {
-    public class BudgetController : BaseAPIController
+    public class IncomeController : BaseAPIController
     {
-        private readonly IBudgetService _budgetService;
+        private readonly IIncomeService _incomeService;
 
-        public BudgetController(IBudgetService budgetService)
+        public IncomeController(IIncomeService incomeService)
         {
-            _budgetService = budgetService;
+            _incomeService = incomeService;
         }
 
-        //GET api/budget
+        //GET api/income
         [HttpGet]
-        public IHttpActionResult Get([FromUri] BudgetListParameter param)
+        public IHttpActionResult Get([FromUri] IncomeListParameter param)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    IList<Budget> budgets = _budgetService.GetAll().ToList();
+                    IList<Income> incomes = _incomeService.GetAll().ToList();
                     if (param.IsPagination())
                     {
                         string keyword = string.Empty;
@@ -44,15 +45,15 @@ namespace KW.Presentation.WebAPI.Controllers
                             skip = (param.PageNo - 1) * param.PageSize;
                         }
 
-                        int totalRows = _budgetService.GetAll().Count();
+                        int totalRows = _incomeService.GetAll().Count();
                         var totalPage = totalRows / param.PageSize;
                         var totalPages = (int)Math.Ceiling((double)totalRows / param.PageSize);
                         if (totalPages < 0)
                             totalPages = 0;
 
-                        var result = budgets.Skip(skip).Take(param.PageSize).ToList();
+                        var result = incomes.Skip(skip).Take(param.PageSize).ToList();
 
-                        IList<BudgetDTO> colls = BudgetDTO.From(result);
+                        IList<IncomeDTO> colls = IncomeDTO.From(result);
 
                         PaginationDTO page = new PaginationDTO();
                         page.PageCount = totalPages;
@@ -64,7 +65,7 @@ namespace KW.Presentation.WebAPI.Controllers
                     }
                     else
                     {
-                        IList<BudgetDTO> dto = BudgetDTO.From(budgets);
+                        IList<IncomeDTO> dto = IncomeDTO.From(incomes);
                         return Ok(dto);
                     }
 
@@ -90,9 +91,9 @@ namespace KW.Presentation.WebAPI.Controllers
         {
             try
             {
-                var result = _budgetService.Get(id);
-                BudgetDTO budgetDTO = BudgetDTO.From(result);
-                return Ok(budgetDTO);
+                var result = _incomeService.Get(id);
+                IncomeDTO incomeDTO = IncomeDTO.From(result);
+                return Ok(incomeDTO);
             }
             catch (Exception ex)
             {
@@ -103,9 +104,9 @@ namespace KW.Presentation.WebAPI.Controllers
             }
         }
 
-        //POST api/budget
+        //POST api/income
         [HttpPost]
-        public IHttpActionResult Add(BudgetParam param)
+        public IHttpActionResult Add(IncomeParam param)
         {
             try
             {
@@ -117,7 +118,7 @@ namespace KW.Presentation.WebAPI.Controllers
                     param.CreatedDate = getDate;
                     param.CreatedBy = userId;
 
-                    int id = _budgetService.Add(param);
+                    int id = _incomeService.Add(param);
                     return Ok(id);
                 }
                 else
@@ -135,9 +136,9 @@ namespace KW.Presentation.WebAPI.Controllers
             }
         }
 
-        //PUT api/budget/id
+        //PUT api/income/id
         [HttpPut]
-        public IHttpActionResult Update(int id, [FromBody]BudgetParam param)
+        public IHttpActionResult Update(int id, [FromBody]IncomeParam param)
         {
             try
             {
@@ -149,7 +150,7 @@ namespace KW.Presentation.WebAPI.Controllers
                     param.UpdatedDate = getDate;
                     param.UpdatedBy = userId;
 
-                    int result = _budgetService.Update(id, param);
+                    int result = _incomeService.Update(id, param);
                     return Ok(result);
                 }
                 else
@@ -167,7 +168,7 @@ namespace KW.Presentation.WebAPI.Controllers
             }
         }
 
-        //DELETE api/budget/id
+        //DELETE api/income/id
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
@@ -177,7 +178,7 @@ namespace KW.Presentation.WebAPI.Controllers
                 {
                     int userId = UserHelper.GetCurrentUserId();
                     DateTime getDate = DateHelper.GetDateTime();
-                    int result = _budgetService.Delete(id, userId, getDate);
+                    int result = _incomeService.Delete(id, userId, getDate);
                     return Ok(result);
                 }
                 else
