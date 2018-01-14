@@ -22,7 +22,7 @@ namespace KW.Infrastructure.Repositories
 
         public IEnumerable<Income> GetAll()
         {
-            return _databaseContext.Incomes.AsQueryable();
+            return _databaseContext.Incomes.Where(x => x.IsDeleted == false).ToList();
         }
 
         public IEnumerable<Income> GetByMonthYear(int month, int year)
