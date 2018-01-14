@@ -19,8 +19,6 @@ namespace KW.Infrastructure.EntityConfig
             Property(x => x.IncomeName).HasColumnName("incomeName");
             Property(x => x.Definition).HasColumnName("definition");
             Property(x => x.IncomeDate).HasColumnName("incomeDate");
-            Property(x => x.IncomeMonth).HasColumnName("incomeMonth");
-            Property(x => x.IncomeYear).HasColumnName("incomeYear");
             Property(x => x.CreatedBy).HasColumnName("createdBy");
             Property(x => x.CreatedDate).HasColumnName("createdDate");
             Property(x => x.UpdatedBy).HasColumnName("updatedBy");
@@ -29,10 +27,6 @@ namespace KW.Infrastructure.EntityConfig
 
             //foreign key
             Property(x => x.BudgetId).HasColumnName("budgetId");
-
-            //relatioship
-            //HasRequired(x => x.Budget).WithOptional(x => x.Income)
-            //HasRequired(x => x.Employee).WithMany(x => x.JobContracts).HasForeignKey(x => x.EmployeeId);
         }
     }
 }

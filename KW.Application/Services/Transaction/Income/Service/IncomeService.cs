@@ -38,10 +38,10 @@ namespace KW.Application
             var budget = _budgetRepository.Get(param.BudgetId);
             Validate.NotNull(budget, "Budget name is not found.");
 
-            isExist(param.IncomeName, param.IncomeDate, param.IncomeMonth, param.IncomeYear);
+            isExist(param.IncomeName, param.IncomeDate);
             using (_unitOfWork)
             {
-                Income model = new Income(param.IncomeName, param.Definition, param.IncomeDate, param.IncomeMonth, param.IncomeYear, budget, param.CreatedBy, param.CreatedDate);
+                Income model = new Income(param.IncomeName, param.Definition, param.IncomeDate, budget, param.CreatedBy, param.CreatedDate);
                 _incomeRepository.Insert(model);
 
                 _unitOfWork.Commit();
@@ -58,10 +58,10 @@ namespace KW.Application
             var budget = _budgetRepository.Get(param.BudgetId);
             Validate.NotNull(budget, "Budget name is not found.");
 
-            isExist(id, param.IncomeName, param.IncomeDate, param.IncomeMonth, param.IncomeYear);
+            isExist(id, param.IncomeName, param.IncomeDate);
             using (_unitOfWork)
             {
-                model.Update(param.IncomeName, param.Definition, param.IncomeDate, param.IncomeMonth, param.IncomeYear, budget,  param.UpdatedBy, param.UpdatedDate);
+                model.Update(param.IncomeName, param.Definition, param.IncomeDate, budget,  param.UpdatedBy, param.UpdatedDate);
                 _incomeRepository.Update(model);
 
                 _unitOfWork.Commit();
@@ -69,19 +69,19 @@ namespace KW.Application
             return model.Id;
         }
 
-        public void isExist(string incomeName, int date, int month, int year)
+        public void isExist(string incomeName, DateTime date)
         {
-            if (_incomeRepository.IsExist(incomeName, date, month, year))
+            if (_incomeRepository.IsExist(incomeName, date))
             {
-                throw new ApplicationException(string.Format("Income name {0} for month {1} already exist.", incomeName, month));
+                throw new ApplicationException(string.Format("Income name {0} for month {1} already exist.", incomeName, date.Month));
             }
         }
 
-        public void isExist( int id, string incomeName, int date, int month, int year)
+        public void isExist( int id, string incomeName, DateTime date)
         {
-            if (_incomeRepository.IsExist(id, incomeName, date, month, year))
+            if (_incomeRepository.IsExist(id, incomeName, date))
             {
-                throw new ApplicationException(string.Format("Income name {0} for month {1} already exist.", incomeName, month));
+                throw new ApplicationException(string.Format("Income name {0} for month {1} already exist.", incomeName, date.Month));
             }
         }
 

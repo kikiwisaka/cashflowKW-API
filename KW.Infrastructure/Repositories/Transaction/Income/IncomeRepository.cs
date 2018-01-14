@@ -27,12 +27,12 @@ namespace KW.Infrastructure.Repositories
 
         public IEnumerable<Income> GetByMonthYear(int month, int year)
         {
-            return _databaseContext.Incomes.Where(x => x.IncomeMonth == month && x.IncomeYear == year && x.IsDeleted == false).ToList();
+            return _databaseContext.Incomes.Where(x => x.IncomeDate.Month == month && x.IncomeDate.Year == year && x.IsDeleted == false).ToList();
         }
 
-        public IEnumerable<Income> GetByToday(int date, int month, int year)
+        public IEnumerable<Income> GetByToday(DateTime date)
         {
-            return _databaseContext.Incomes.Where(x => x.IncomeDate == date && x.IncomeMonth == month && x.IncomeYear == year && x.IsDeleted == false).ToList();
+            return _databaseContext.Incomes.Where(x => x.IncomeDate == date && x.IsDeleted == false).ToList();
         }
 
         public void Insert(Income model)
@@ -40,18 +40,18 @@ namespace KW.Infrastructure.Repositories
             _databaseContext.Incomes.Add(model);
         }
 
-        public bool IsExist(string incomeName, int date, int month, int year)
+        public bool IsExist(string incomeName, DateTime date)
         {
-            var result = _databaseContext.Incomes.Where(x => x.IncomeName == incomeName && x.IncomeDate == date && x.IncomeMonth == month && x.IncomeYear == year && x.IsDeleted == false).ToList();
+            var result = _databaseContext.Incomes.Where(x => x.IncomeName == incomeName && x.IncomeDate == date && x.IsDeleted == false).ToList();
             if (result.Count > 0)
                 return true;
 
             return false;
         }
 
-        public bool IsExist(int id, string incomeName, int date, int month, int year)
+        public bool IsExist(int id, string incomeName, DateTime date)
         {
-            var result = _databaseContext.Incomes.Where(x => x.Id != id && x.IncomeName == incomeName && x.IncomeDate == date && x.IncomeMonth == month && x.IncomeYear == year && x.IsDeleted == false).ToList();
+            var result = _databaseContext.Incomes.Where(x => x.Id != id && x.IncomeName == incomeName && x.IncomeDate == date && x.IsDeleted == false).ToList();
             if (result.Count > 0)
                 return true;
 

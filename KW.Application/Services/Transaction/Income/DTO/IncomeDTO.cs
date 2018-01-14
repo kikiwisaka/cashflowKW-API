@@ -9,9 +9,7 @@ namespace KW.Application.DTO
         public int Id { get; set; }
         public string IncomeName { get; set; }
         public string Definition { get; set; }
-        public int IncomeDate{ get; set; }
-        public int IncomeMonth{ get; set; }
-        public int IncomeYear{ get; set; }
+        public DateTime IncomeDate { get; set; }
         public int BudgetId { get; set; }
         public string BudgetName { get; set; }
         public int? CreatedBy { get; set; }
@@ -28,8 +26,6 @@ namespace KW.Application.DTO
             this.IncomeName = model.IncomeName;
             this.Definition = model.Definition;
             this.IncomeDate = model.IncomeDate;
-            this.IncomeMonth = model.IncomeMonth;
-            this.IncomeYear = model.IncomeYear; 
             this.CreatedBy = model.CreatedBy;
             this.CreatedDate = model.CreatedDate;
             this.UpdatedBy = model.UpdatedBy;
