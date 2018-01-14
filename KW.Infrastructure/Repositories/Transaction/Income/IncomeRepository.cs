@@ -17,7 +17,7 @@ namespace KW.Infrastructure.Repositories
 
         public Income Get(int id)
         {
-            throw new NotImplementedException();
+            return _databaseContext.Incomes.SingleOrDefault(x => x.Id == id);
         }
 
         public IEnumerable<Income> GetAll()

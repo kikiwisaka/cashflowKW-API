@@ -53,7 +53,7 @@ namespace KW.Application
         public int Update(int id, IncomeParam param)
         {
             var model = _incomeRepository.Get(id);
-            Validate.NotNull(model, "Budget name is not found.");
+            Validate.NotNull(model, "Income name is not found.");
 
             var budget = _budgetRepository.Get(param.BudgetId);
             Validate.NotNull(budget, "Budget name is not found.");
