@@ -16,6 +16,8 @@ namespace KW.Infrastructure
 
         //Transaction
         IDbSet<Income> Incomes { get; set; }
+        IDbSet<Expenditure> Expenditures { get; set; }
+        IDbSet<ExpenditureDetail> ExpenditureDetails { get; set; }
 
 
         //User

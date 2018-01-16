@@ -26,7 +26,7 @@ namespace KW.Domain
         {
             this.IncomeName = incomeName;
             this.Definition = definition;
-            this.IncomeDate = incomeDate;
+            this.IncomeDate = incomeDate.Date;
             this.BudgetId = budget.Id;
             this.CreatedBy = createdBy;
             this.CreatedDate = createdDate;
@@ -37,7 +37,7 @@ namespace KW.Domain
         {
             this.IncomeName = incomeName;
             this.Definition = definition;
-            this.IncomeDate = incomeDate;
+            this.IncomeDate = incomeDate.Date;
             this.BudgetId = budget.Id;
             this.UpdatedBy = updatedBy;
             this.UpdatedDate = updatedDate;

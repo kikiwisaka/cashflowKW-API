@@ -12,6 +12,8 @@ namespace KW.Infrastructure
 
         //Transaction
         public IDbSet<Income> Incomes { get; set; }
+        public IDbSet<Expenditure> Expenditures { get; set; }
+        public IDbSet<ExpenditureDetail> ExpenditureDetails { get; set; }
 
 
         //User
@@ -44,6 +46,8 @@ namespace KW.Infrastructure
 
             //Transaction
             modelBuilder.Configurations.Add(new IncomeConfig());
+            modelBuilder.Configurations.Add(new ExpenditureConfig());
+            modelBuilder.Configurations.Add(new ExpenditureDetailConfig());
 
 
             //User

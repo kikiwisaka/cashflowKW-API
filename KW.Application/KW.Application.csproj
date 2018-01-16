@@ -114,6 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
+    <Folder Include="Services\Transaction\ExpenditureDetail\" />
+    <Folder Include="Services\Transaction\Expenditure\DTO\" />
+    <Folder Include="Services\Transaction\Expenditure\Param\" />
+    <Folder Include="Services\Transaction\Expenditure\Service\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\AHCBlowfish.dll" />
