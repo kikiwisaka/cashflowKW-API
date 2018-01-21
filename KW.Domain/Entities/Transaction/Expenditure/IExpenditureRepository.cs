@@ -8,7 +8,7 @@ namespace KW.Domain
         Expenditure Get(int id);
         IEnumerable<Expenditure> GetAll();
         IEnumerable<Expenditure> GetByMonthYear(int month, int year);
-        Expenditure GetByToday(DateTime date);
+        Expenditure GetByExpenditureDate(DateTime date);
         void Insert(Expenditure model);
         void Update(Expenditure model);
         bool IsExist(int id, DateTime expenditureDate);

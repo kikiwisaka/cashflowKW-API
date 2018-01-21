@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using KW.Application.Params;
 using KW.Core;
 using KW.Domain;
+using System.Linq;
 
 namespace KW.Application
 {
@@ -40,16 +41,37 @@ namespace KW.Application
             var budget = _budgetRepository.Get(param.BudgetId);
             Validate.NotNull(budget, "Budget name is not found.");
 
-            isExist(param.ExpenditureDate);
+            Expenditure modelHeader = new Expenditure();
+
             using (_unitOfWork)
             {
-                Expenditure model = new Expenditure(param.ExpenditureDate, param.CreatedBy, param.CreatedDate);
-                _expenditureRepository.Insert(model);
+                var currentData = _expenditureRepository.GetByExpenditureDate(param.ExpenditureDate);
+                if (currentData == null)
+                {
+                    Expenditure model = new Expenditure(param.ExpenditureDate, param.Price, param.CreatedBy, param.CreatedDate);
+                    _expenditureRepository.Insert(model);
+                    id = model.Id;
+                    modelHeader = model;
 
-                //insert detail
+                    //insert detail
+                    ExpenditureDetail modelDetail = new ExpenditureDetail(param.ExpenditureName, param.ExpenditureDefinition, param.Price, model, budget, param.CreatedBy, param.CreatedDate);
+                    _expenditureDetailRepository.Insert(modelDetail);
+                }
+                else
+                {
+                    //insert detail
+                    ExpenditureDetail modelDetail = new ExpenditureDetail(param.ExpenditureName, param.ExpenditureDefinition, param.Price, modelHeader, budget, param.CreatedBy, param.CreatedDate);
+                    _expenditureDetailRepository.Insert(modelDetail);
+
+                    //add total
+                    var dataHeader = _expenditureRepository.Get(param.ExpenditureId);
+                    var totalPerDay = CalculateTotalPerDay(param.ExpenditureId);
+
+                    var grandTotal = dataHeader.Total + totalPerDay;
+                    dataHeader.AddTotal(grandTotal);
+                }
 
                 _unitOfWork.Commit();
-                id = model.Id;
             }
             return id;
         }
@@ -62,15 +84,71 @@ namespace KW.Application
             var budget = _budgetRepository.Get(param.BudgetId);
             Validate.NotNull(budget, "Budget name is not found.");
 
-            isExist(id, param.ExpenditureDate);
+            var modelDetail = _expenditureDetailRepository.GetByExpenditureIdExpenditureDetailId(id, param.ExpenditureDetailId);
+
+            //isExist(id, param.ExpenditureDate);
             using (_unitOfWork)
             {
-                model.Update(param.ExpenditureDate, param.UpdatedBy, param.UpdatedDate);
-                _expenditureRepository.Update(model);
+                var currentDate = _expenditureRepository.GetByExpenditureDate(param.ExpenditureDate);
+                if (currentDate == null)
+                {
+                    Expenditure modelNew = new Expenditure(param.ExpenditureDate, param.Price, param.CreatedBy, param.CreatedDate);
+                    _expenditureRepository.Insert(modelNew);
+
+                    model = modelNew;
+                }
+                if (modelDetail != null)
+                {
+                    modelDetail.Update(param.ExpenditureName, param.ExpenditureDefinition, param.Price, model, budget, param.UpdatedBy, param.UpdatedDate);
+                    _expenditureDetailRepository.Update(modelDetail);
+
+                    //change total
+                    var dataHeader = _expenditureRepository.Get(modelDetail.ExpenditureId);
+                    var totalPerDay = CalculateTotalPerDay(modelDetail.ExpenditureId);
+                    var grandTotal = dataHeader.Total + totalPerDay;
+
+                    dataHeader.AddTotal(grandTotal);
+                }
+                else
+                {
+                    Validate.NotNull(modelDetail, "Expenditure Detail's id {1} with expenditure's id {0} is not found. ", model.Id, modelDetail.Id);
+                }
 
                 _unitOfWork.Commit();
             }
             return model.Id;
+        }
+
+        public int Delete(int expenditureDetailId, int updatedBy, DateTime updatedDate)
+        {
+            var modelDetail = _expenditureDetailRepository.Get(expenditureDetailId);
+            Validate.NotNull(modelDetail, "Expenditure name does not found.");
+
+            var model = this.Get(modelDetail.ExpenditureId);
+
+            var data = _expenditureDetailRepository.GetByExpenditureId(expenditureDetailId).ToList();
+           
+            using (_unitOfWork)
+            {
+                modelDetail.Delete(updatedBy, updatedDate);
+                _expenditureDetailRepository.Update(modelDetail);
+
+                if (data.Count == 1)
+                    model.Delete(updatedBy, updatedDate);
+
+                _unitOfWork.Commit();
+                expenditureDetailId = modelDetail.Id;
+            }
+            return expenditureDetailId;
+        }
+
+        public double CalculateTotalPerDay(int expenditureId)
+        {
+            double total = 0;
+            var dataDetail = _expenditureDetailRepository.GetByExpenditureId(expenditureId).ToList();
+            total = dataDetail.Sum(x => x.Price);
+
+            return total;
         }
 
         public void IsDetailExist(int expenditureId)
@@ -99,19 +177,6 @@ namespace KW.Application
             }
         }
 
-        public int Delete(int id, int updatedBy, DateTime updatedDate)
-        {
-            var model = this.Get(id);
-            Validate.NotNull(model, "Expenditure name does is not found.");
-
-            using (_unitOfWork)
-            {
-                model.Delete(updatedBy, updatedDate);
-                _expenditureRepository.Update(model);
-                _unitOfWork.Commit();
-                id = model.Id;
-            }
-            return id;
-        }
+        
     }
 }

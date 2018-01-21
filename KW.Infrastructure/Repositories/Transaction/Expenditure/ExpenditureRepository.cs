@@ -30,9 +30,9 @@ namespace KW.Infrastructure.Repositories
             return _databaseContext.Expenditures.Where(x => x.ExpenditureDate.Month == month && x.ExpenditureDate.Year == year && x.IsDeleted == false).ToList();
         }
 
-        public Expenditure GetByToday(DateTime date)
+        public Expenditure GetByExpenditureDate(DateTime date)
         {
-            return _databaseContext.Expenditures.FirstOrDefault(x => x.ExpenditureDate == date && x.IsDeleted == false);
+            return _databaseContext.Expenditures.FirstOrDefault(x => x.ExpenditureDate.Date == date && x.IsDeleted == false);
         }
 
         public void Insert(Expenditure model)

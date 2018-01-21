@@ -32,6 +32,8 @@ namespace KW.DependencyResolver
             container.RegisterType<IUserResetPasswordRepository, UserResetPasswordRepository>();
             container.RegisterType<IBudgetRepository, BudgetRepository>();
             container.RegisterType<IIncomeRepository, IncomeRepository>();
+            container.RegisterType<IExpenditureRepository, ExpenditureRepository>();
+            container.RegisterType<IExpenditureDetailRepository, ExpenditureDetailRepository>();
 
             //Services
             container.RegisterType<IUserService, UserService>();
@@ -39,6 +41,7 @@ namespace KW.DependencyResolver
             container.RegisterType<IUserResetPasswordService, UserResetPasswordService>();
             container.RegisterType<IBudgetService, BudgetService>();
             container.RegisterType<IIncomeService, IncomeService>();
+            container.RegisterType<IExpenditureService, ExpenditureService>();
 
 
             //Configs

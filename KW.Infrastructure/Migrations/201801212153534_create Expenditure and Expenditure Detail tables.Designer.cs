@@ -7,13 +7,13 @@ namespace KW.Infrastructure
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class changeincomeDatedatatype : IMigrationMetadata
+    public sealed partial class createExpenditureandExpenditureDetailtables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changeincomeDatedatatype));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(createExpenditureandExpenditureDetailtables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801142217130_change incomeDate data type"; }
+            get { return "201801212153534_create Expenditure and Expenditure Detail tables"; }
         }
         
         string IMigrationMetadata.Source

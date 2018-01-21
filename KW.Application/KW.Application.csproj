@@ -79,6 +79,10 @@
     <Compile Include="Services\General\DTO\HelperDTO.cs" />
     <Compile Include="Services\General\DTO\PaginationDTO.cs" />
     <Compile Include="Services\Master\Budget\DTO\BudgetDTO.cs" />
+    <Compile Include="Services\Transaction\ExpenditureDetail\DTO\ExpenditureDetailDTO.cs" />
+    <Compile Include="Services\Transaction\ExpenditureDetail\Service\ExpenditureDetailService.cs" />
+    <Compile Include="Services\Transaction\ExpenditureDetail\Service\IExpenditureDetailService.cs" />
+    <Compile Include="Services\Transaction\Expenditure\DTO\ExpenditureDTO.cs" />
     <Compile Include="Services\Transaction\Expenditure\Param\ExpenditureListParam.cs" />
     <Compile Include="Services\Transaction\Expenditure\Param\ExpenditureParam.cs" />
     <Compile Include="Services\Transaction\Expenditure\Service\IExpenditureService.cs" />
@@ -118,8 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-    <Folder Include="Services\Transaction\ExpenditureDetail\" />
-    <Folder Include="Services\Transaction\Expenditure\DTO\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\AHCBlowfish.dll" />

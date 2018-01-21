@@ -7,6 +7,7 @@ namespace KW.Domain
     {
         ExpenditureDetail Get(int id);
         IEnumerable<ExpenditureDetail> GetByExpenditureId(int expenditureId);
+        ExpenditureDetail GetByExpenditureIdExpenditureDetailId(int expenditureId, int expenditureDetailId);
         IEnumerable<ExpenditureDetail> GetByMonthYear(DateTime month, DateTime year);
         void Insert(ExpenditureDetail model);
         void Update(ExpenditureDetail model);
