@@ -113,7 +113,7 @@ namespace KW.Presentation.WebAPI.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    int userId = UserHelper.GetCurrentUserId();
+                    int userId = 1; //UserHelper.GetCurrentUserId();
                     DateTime getDate = DateHelper.GetDateTime();
 
                     param.CreatedDate = getDate;
@@ -145,7 +145,7 @@ namespace KW.Presentation.WebAPI.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    int userId = UserHelper.GetCurrentUserId();
+                    int userId = 1; // UserHelper.GetCurrentUserId();
                     DateTime getDate = DateHelper.GetDateTime();
 
                     param.UpdatedDate = getDate;
@@ -177,7 +177,7 @@ namespace KW.Presentation.WebAPI.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    int userId = UserHelper.GetCurrentUserId();
+                    int userId = 1; // UserHelper.GetCurrentUserId();
                     DateTime getDate = DateHelper.GetDateTime();
                     int result = _expenditureService.Delete(id, userId, getDate);
                     return Ok(result);

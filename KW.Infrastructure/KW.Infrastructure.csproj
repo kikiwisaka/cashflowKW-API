@@ -60,10 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExternalServices\EmailClients\GmailClient.cs" />
-    <Compile Include="Migrations\201801212153534_create Expenditure and Expenditure Detail tables.cs" />
-    <Compile Include="Migrations\201801212153534_create Expenditure and Expenditure Detail tables.Designer.cs">
-      <DependentUpon>201801212153534_create Expenditure and Expenditure Detail tables.cs</DependentUpon>
-    </Compile>
     <Compile Include="Persistance\CustomUserStore.cs" />
     <Compile Include="Persistance\DbContext\DatabaseContext.cs" />
     <Compile Include="DatabaseInitializer.cs" />
@@ -115,11 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExternalServices\EmailMessage\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801212153534_create Expenditure and Expenditure Detail tables.resx">
-      <DependentUpon>201801212153534_create Expenditure and Expenditure Detail tables.cs</DependentUpon>
-    </EmbeddedResource>
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -42,6 +42,7 @@ namespace KW.DependencyResolver
             container.RegisterType<IBudgetService, BudgetService>();
             container.RegisterType<IIncomeService, IncomeService>();
             container.RegisterType<IExpenditureService, ExpenditureService>();
+            container.RegisterType<IExpenditureDetailService, ExpenditureDetailService>();
 
 
             //Configs
