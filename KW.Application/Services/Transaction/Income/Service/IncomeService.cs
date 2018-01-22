@@ -41,7 +41,7 @@ namespace KW.Application
             isExist(param.IncomeName, param.IncomeDate);
             using (_unitOfWork)
             {
-                Income model = new Income(param.IncomeName, param.Definition, param.IncomeDate, budget, param.CreatedBy, param.CreatedDate);
+                Income model = new Income(param.IncomeName, param.Definition, param.IncomeDate, param.Amount, budget, param.CreatedBy, param.CreatedDate);
                 _incomeRepository.Insert(model);
 
                 _unitOfWork.Commit();
@@ -61,7 +61,7 @@ namespace KW.Application
             isExist(id, param.IncomeName, param.IncomeDate);
             using (_unitOfWork)
             {
-                model.Update(param.IncomeName, param.Definition, param.IncomeDate, budget,  param.UpdatedBy, param.UpdatedDate);
+                model.Update(param.IncomeName, param.Definition, param.IncomeDate, param.Amount, budget, param.UpdatedBy, param.UpdatedDate);
                 _incomeRepository.Update(model);
 
                 _unitOfWork.Commit();

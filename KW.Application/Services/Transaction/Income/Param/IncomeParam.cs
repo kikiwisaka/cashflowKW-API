@@ -7,6 +7,7 @@ namespace KW.Application.Params
         public string IncomeName { get; set; }
         public string Definition { get; set; }
         public DateTime IncomeDate { get; set; }
+        public double Amount { get; set; }
         public int BudgetId { get; set; }
         public int? CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }

@@ -19,6 +19,7 @@ namespace KW.Infrastructure.EntityConfig
             Property(x => x.IncomeName).HasColumnName("incomeName");
             Property(x => x.Definition).HasColumnName("definition");
             Property(x => x.IncomeDate).HasColumnName("incomeDate");
+            Property(x => x.Amount).HasColumnName("amount");
             Property(x => x.CreatedBy).HasColumnName("createdBy");
             Property(x => x.CreatedDate).HasColumnName("createdDate");
             Property(x => x.UpdatedBy).HasColumnName("updatedBy");

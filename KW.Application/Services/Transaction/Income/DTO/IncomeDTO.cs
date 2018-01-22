@@ -10,6 +10,7 @@ namespace KW.Application.DTO
         public string IncomeName { get; set; }
         public string Definition { get; set; }
         public DateTime IncomeDate { get; set; }
+        public double Amount { get; set; }
         public int BudgetId { get; set; }
         public string BudgetName { get; set; }
         public int? CreatedBy { get; set; }
@@ -26,6 +27,7 @@ namespace KW.Application.DTO
             this.IncomeName = model.IncomeName;
             this.Definition = model.Definition;
             this.IncomeDate = model.IncomeDate;
+            this.Amount = model.Amount;
             this.CreatedBy = model.CreatedBy;
             this.CreatedDate = model.CreatedDate;
             this.UpdatedBy = model.UpdatedBy;
