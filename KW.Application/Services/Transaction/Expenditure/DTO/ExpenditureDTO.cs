@@ -22,6 +22,7 @@ namespace KW.Application.DTO
 
             this.Id = model.Id;
             this.ExpenditureDate = model.ExpenditureDate;
+            this.Total = model.Total;
             this.CreatedBy = model.CreatedBy;
             this.CreatedDate = model.CreatedDate;
             this.UpdatedBy = model.UpdatedBy;

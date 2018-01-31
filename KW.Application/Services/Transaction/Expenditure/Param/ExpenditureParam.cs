@@ -8,9 +8,9 @@ namespace KW.Application.Params
         public string ExpenditureName { get; set; }
         public string ExpenditureDefinition { get; set; }
         public double Price { get; set; }
-        public int ExpenditureId { get; private set; }
-        public int ExpenditureDetailId { get; private set; }
-        public int BudgetId { get; private set; }
+        public int ExpenditureId { get; set; }
+        public int ExpenditureDetailId { get; set; }
+        public int BudgetId { get; set; }
         public int? CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public int? UpdatedBy { get; set; }

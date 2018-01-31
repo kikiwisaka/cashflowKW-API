@@ -59,13 +59,15 @@ namespace KW.Application
                 }
                 else
                 {
+                    modelHeader = currentData;
                     //insert detail
                     ExpenditureDetail modelDetail = new ExpenditureDetail(param.ExpenditureName, param.ExpenditureDefinition, param.Price, modelHeader, budget, param.CreatedBy, param.CreatedDate);
                     _expenditureDetailRepository.Insert(modelDetail);
 
                     //add total
-                    var dataHeader = _expenditureRepository.Get(param.ExpenditureId);
-                    var totalPerDay = CalculateTotalPerDay(param.ExpenditureId);
+                    var dataHeader = _expenditureRepository.Get(currentData.Id);
+                    //var totalPerDay = CalculateTotalPerDay(currentData.Id);
+                    var totalPerDay = param.Price;
 
                     var grandTotal = dataHeader.Total + totalPerDay;
                     dataHeader.AddTotal(grandTotal);

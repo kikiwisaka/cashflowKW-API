@@ -32,7 +32,7 @@ namespace KW.Infrastructure.Repositories
 
         public Expenditure GetByExpenditureDate(DateTime date)
         {
-            return _databaseContext.Expenditures.FirstOrDefault(x => x.ExpenditureDate.Date == date && x.IsDeleted == false);
+            return _databaseContext.Expenditures.FirstOrDefault(x => x.ExpenditureDate == date && x.IsDeleted == false);
         }
 
         public void Insert(Expenditure model)
